@@ -28,7 +28,17 @@ public class PagerAdapter extends FragmentPagerAdapter {
             case 2:
                 Temperature temperature = new Temperature();
                 return temperature;
-         default:return null;
+            case 3:
+                Weight weight = new Weight();
+                return weight;
+            case 4:
+                Time time = new Time();
+                return time;
+            case 5:
+                Volume volume = new Volume();
+                return volume;
+
+            default:return null;
         }
     }
 
