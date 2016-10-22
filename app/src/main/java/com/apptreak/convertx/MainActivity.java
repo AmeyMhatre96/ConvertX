@@ -13,11 +13,15 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        //Pushing drawable
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Length"));
-        tabLayout.addTab(tabLayout.newTab().setText("Area"));
-        tabLayout.addTab(tabLayout.newTab().setText("Temperature"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_length));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_area));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_temperature1));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_weight));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_time));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_volume));
+
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
