@@ -13,8 +13,7 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//test
-
+        //Pushing drawable
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_length));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_area));
