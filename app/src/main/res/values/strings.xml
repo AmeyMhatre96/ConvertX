@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Convert X</string>
+    <string name="eg_input">Enter a number</string>
+    <string name="btn_cm">cm</string>
+    <string name="btn_m">m</string>
+    <string name="btn_mm">mm</string>
+    <string name="btn_km">km</string>
+    <string name="txt_default">X</string>
+    <string name="txt_To">To</string>
+</resources>
