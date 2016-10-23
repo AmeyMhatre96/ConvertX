@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/lengthLayout">
 
     <EditText
         android:id="@+id/txtInput"
@@ -56,6 +57,7 @@
                 android:textAllCaps="false" />
 
         </LinearLayout>
+
     </HorizontalScrollView>
 
     <TextView
@@ -112,7 +114,7 @@
     </HorizontalScrollView>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtOp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/outputUnitsScroll"
@@ -120,4 +122,17 @@
         android:layout_marginTop="30dp"
         android:text="@string/txt_default"
         android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputUnit"
+        android:text="@string/btn_cm"
+        android:textSize="30sp"
+        android:layout_alignBaseline="@+id/txtInput"
+        android:layout_alignBottom="@+id/txtInput"
+        android:layout_toRightOf="@+id/txtTo"
+        android:layout_toEndOf="@+id/txtTo"
+        android:layout_marginLeft="59dp"
+        android:layout_marginStart="59dp" />
 </RelativeLayout>
