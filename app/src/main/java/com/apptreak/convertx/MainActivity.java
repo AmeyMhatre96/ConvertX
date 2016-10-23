@@ -17,10 +17,10 @@ public class MainActivity extends AppCompatActivity  {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_length));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_area));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_temperature1));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_weight));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_time));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_volume));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_temperature2));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_weight1));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_time1));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_volume1));
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
