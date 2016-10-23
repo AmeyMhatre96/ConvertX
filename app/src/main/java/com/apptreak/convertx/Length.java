@@ -20,6 +20,7 @@ public class Length extends Fragment implements View.OnClickListener {
     EditText txtInput;
     RelativeLayout lengthLayout;
     java.text.DecimalFormat df = new java.text.DecimalFormat("#.#####");
+    double inputNo;
 
     @Nullable
     @Override
@@ -57,30 +58,34 @@ public class Length extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         df.setRoundingMode(RoundingMode.CEILING);
-        double inputNo = Double.parseDouble(txtInput.getText().toString());
+        inputNo = Double.parseDouble(txtInput.getText().toString());
         switch (v.getId()) {
             case R.id.btnCm:
                 inputUnit.setText(R.string.btn_cm);
+                    if (output.getText().toString().endsWith("cm")){
+                        convertToCm();
+                    }
                 break;
             case R.id.btnM:
                 inputUnit.setText(R.string.btn_m);
+                    if (output.getText().toString().endsWith("cm")){
+                        convertToCm();
+                    }
                 break;
             case R.id.btnKm:
                 inputUnit.setText(R.string.btn_km);
+                if (output.getText().toString().endsWith("cm")){
+                    convertToCm();
+                }
                 break;
             case R.id.btnMm:
                 inputUnit.setText(R.string.btn_mm);
+                if (output.getText().toString().endsWith("cm")){
+                    convertToCm();
+                }
                 break;
             case R.id.btnCmOp:
-                if (inputUnit.getText().toString().equalsIgnoreCase("m")) {
-                    output.setText(String.format("%s", df.format(inputNo * 100) + " cm"));
-                } else if (inputUnit.getText().toString().equalsIgnoreCase("mm")) {
-                    output.setText(String.format("%s", df.format(inputNo / 10) + " cm"));
-                } else if (inputUnit.getText().toString().equalsIgnoreCase("km")) {
-                    output.setText(String.format("%s", df.format(inputNo * 100000) + " cm"));
-                } else {
-                    output.setText(String.format("%s", df.format(inputNo) + " cm"));
-                }
+                convertToCm();
                 break;
             case R.id.btnMmOp:
 
@@ -92,6 +97,18 @@ public class Length extends Fragment implements View.OnClickListener {
 
                 break;
 
+        }
+    }
+
+    void convertToCm() {
+        if (inputUnit.getText().toString().equalsIgnoreCase("m")) {
+            output.setText(String.format("%s", df.format(inputNo * 100) + " cm"));
+        } else if (inputUnit.getText().toString().equalsIgnoreCase("mm")) {
+            output.setText(String.format("%s", df.format(inputNo / 10) + " cm"));
+        } else if (inputUnit.getText().toString().equalsIgnoreCase("km")) {
+            output.setText(String.format("%s", df.format(inputNo * 100000) + " cm"));
+        } else {
+            output.setText(String.format("%s", df.format(inputNo) + " cm"));
         }
     }
 }
