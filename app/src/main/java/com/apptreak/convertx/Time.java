@@ -79,6 +79,8 @@ public class Time extends Fragment implements View.OnClickListener {
         df.setRoundingMode(RoundingMode.CEILING);
         if (textTimeInput.getText().toString().length() != 0)
             inputNo = Double.parseDouble(textTimeInput.getText().toString());
+        else
+            inputNo = 0;
         hideSoftKeyboard();
 
         switch (v.getId()) {
@@ -151,20 +153,21 @@ public class Time extends Fragment implements View.OnClickListener {
 
     //converting to seconds
     void timeConversion() {
-        if (textTimeUnit.getText().toString().equalsIgnoreCase("min"))
-            inputNo = inputNo * 60;
-        else if (textTimeUnit.getText().toString().equalsIgnoreCase("hour"))
-            inputNo = inputNo * 3600;
-        else if (textTimeUnit.getText().toString().equalsIgnoreCase("day"))
-            inputNo = inputNo * 86400;
-        else if (textTimeUnit.getText().toString().equalsIgnoreCase("week"))
-            inputNo = inputNo * 604800;
-        else if (textTimeUnit.getText().toString().equalsIgnoreCase("month"))
-            inputNo = inputNo * 2629800;
-        else if (textTimeUnit.getText().toString().equalsIgnoreCase("year"))
-            inputNo = inputNo * 31557600;
+        if (textTimeInput.getText().toString().length() != 0) {
+            if (textTimeUnit.getText().toString().equalsIgnoreCase("min"))
+                inputNo = inputNo * 60;
+            else if (textTimeUnit.getText().toString().equalsIgnoreCase("hour") )
+                inputNo = inputNo * 3600;
+            else if (textTimeUnit.getText().toString().equalsIgnoreCase("day"))
+                inputNo = inputNo * 86400;
+            else if (textTimeUnit.getText().toString().equalsIgnoreCase("week"))
+                inputNo = inputNo * 604800;
+            else if (textTimeUnit.getText().toString().equalsIgnoreCase("month"))
+                inputNo = inputNo * 2629800;
+            else if (textTimeUnit.getText().toString().equalsIgnoreCase("year"))
+                inputNo = inputNo * 31557600;
+        }
     }
-
     //Checking the output unit, for instant conversion from input buttons
     void outputCheck() {
         if (textTimeOut.getText().toString().endsWith("seconds") | textTimeOut.getText().toString().endsWith("seconds"))
