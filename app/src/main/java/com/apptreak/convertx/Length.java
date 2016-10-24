@@ -58,43 +58,71 @@ public class Length extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         df.setRoundingMode(RoundingMode.CEILING);
-        inputNo = Double.parseDouble(txtInput.getText().toString());
+        try {
+            inputNo = Double.parseDouble(txtInput.getText().toString());
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
         switch (v.getId()) {
             case R.id.btnCm:
                 inputUnit.setText(R.string.btn_cm);
-                    if (output.getText().toString().endsWith("cm")){
-                        convertToCm();
-                    }
+                if (output.getText().toString().endsWith("mm")) {
+                    convertToMm();
+                } else if (output.getText().toString().endsWith("m")) {
+                    convertToM();
+                } else if (output.getText().toString().endsWith("km")) {
+                    convertToKm();
+                } else {
+                    output.setText(String.format("%s", df.format(inputNo) + " cm"));
+                }
                 break;
             case R.id.btnM:
                 inputUnit.setText(R.string.btn_m);
-                    if (output.getText().toString().endsWith("cm")){
-                        convertToCm();
-                    }
+                if (output.getText().toString().endsWith("mm")) {
+                    convertToMm();
+                } else if (output.getText().toString().endsWith("cm")) {
+                    convertToCm();
+                } else if (output.getText().toString().endsWith("km")) {
+                    convertToKm();
+                } else {
+                    output.setText(String.format("%s", df.format(inputNo) + " m"));
+                }
                 break;
             case R.id.btnKm:
                 inputUnit.setText(R.string.btn_km);
-                if (output.getText().toString().endsWith("cm")){
+                if (output.getText().toString().endsWith("mm")) {
+                    convertToMm();
+                } else if (output.getText().toString().endsWith("m")) {
+                    convertToM();
+                } else if (output.getText().toString().endsWith("cm")) {
                     convertToCm();
+                } else {
+                    output.setText(String.format("%s", df.format(inputNo) + " km"));
                 }
                 break;
             case R.id.btnMm:
                 inputUnit.setText(R.string.btn_mm);
-                if (output.getText().toString().endsWith("cm")){
+                if (output.getText().toString().endsWith("cm")) {
                     convertToCm();
+                } else if (output.getText().toString().endsWith("m")) {
+                    convertToM();
+                } else if (output.getText().toString().endsWith("km")) {
+                    convertToKm();
+                } else {
+                    output.setText(String.format("%s", df.format(inputNo) + " mm"));
                 }
                 break;
             case R.id.btnCmOp:
                 convertToCm();
                 break;
             case R.id.btnMmOp:
-
+                convertToMm();
                 break;
             case R.id.btnKmOp:
-
+                convertToKm();
                 break;
             case R.id.btnMOp:
-
+                convertToM();
                 break;
 
         }
@@ -109,6 +137,42 @@ public class Length extends Fragment implements View.OnClickListener {
             output.setText(String.format("%s", df.format(inputNo * 100000) + " cm"));
         } else {
             output.setText(String.format("%s", df.format(inputNo) + " cm"));
+        }
+    }
+
+    void convertToM() {
+        if (inputUnit.getText().toString().equalsIgnoreCase("cm")) {
+            output.setText(String.format("%s", df.format(inputNo / 100) + " m"));
+        } else if (inputUnit.getText().toString().equalsIgnoreCase("mm")) {
+            output.setText(String.format("%s", df.format(inputNo / 1000) + " m"));
+        } else if (inputUnit.getText().toString().equalsIgnoreCase("km")) {
+            output.setText(String.format("%s", df.format(inputNo * 1000) + " m"));
+        } else {
+            output.setText(String.format("%s", df.format(inputNo) + " m"));
+        }
+    }
+
+    void convertToMm() {
+        if (inputUnit.getText().toString().equalsIgnoreCase("cm")) {
+            output.setText(String.format("%s", df.format(inputNo * 10) + " mm"));
+        } else if (inputUnit.getText().toString().equalsIgnoreCase("m")) {
+            output.setText(String.format("%s", df.format(inputNo * 1000) + " mm"));
+        } else if (inputUnit.getText().toString().equalsIgnoreCase("km")) {
+            output.setText(String.format("%s", df.format(inputNo * 1000000) + " mm"));
+        } else {
+            output.setText(String.format("%s", df.format(inputNo) + " mm"));
+        }
+    }
+
+    void convertToKm() {
+        if (inputUnit.getText().toString().equalsIgnoreCase("cm")) {
+            output.setText(String.format("%s", df.format(inputNo / 100000) + " km"));
+        } else if (inputUnit.getText().toString().equalsIgnoreCase("m")) {
+            output.setText(String.format("%s", df.format(inputNo / 1000) + " km"));
+        } else if (inputUnit.getText().toString().equalsIgnoreCase("mm")) {
+            output.setText(String.format("%s", df.format(inputNo / 1000000) + " km"));
+        } else {
+            output.setText(String.format("%s", df.format(inputNo) + " km"));
         }
     }
 }
