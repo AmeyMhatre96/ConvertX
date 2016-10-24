@@ -223,9 +223,9 @@ public class Time extends Fragment implements View.OnClickListener {
 
     void toMonths() {
         if ((inputNo / 2629800) == 1)
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 2629800) + " week"));
+            textTimeOut.setText(String.format("%s", df.format(inputNo / 2629800) + " month"));
         else
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 2629800) + " weeks"));
+            textTimeOut.setText(String.format("%s", df.format(inputNo / 2629800) + " months"));
     }
 
     void toYears() {
