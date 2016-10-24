@@ -1,9 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/lengthLayout">
+
+    <EditText
+        android:id="@+id/timeInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:ems="10"
+        android:hint="@string/eg_input"
+        android:inputType="numberDecimal"
+        android:textAlignment="center" />
+
+    <HorizontalScrollView
+        android:id="@+id/inputUnitsScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timeInput"
+        android:layout_marginTop="12dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonTimeSeconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sec"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/buttonTimeMinutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="min"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonTimeHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hour"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonTimeDays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="days"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/buttonTimeWeeks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="weeks"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonTimeMonths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="month"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonTimeYears"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="year"
+                android:textAllCaps="false" />
+
+
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/txtTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputUnitsScroll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/txt_To"
+        android:textSize="30sp" />
+
+    <HorizontalScrollView
+        android:id="@+id/outputUnitsScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTo"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonTimeMinutesOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="min"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonTimeSecondsOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sec"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonTimeHoursOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hour"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonTimeDaysOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="day"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonTimeWeeksOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="week"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/buttonTimeMonthsOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="month"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonTimeYearsOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="year"
+                android:textAllCaps="false" />
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/timeOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/outputUnitsScroll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/txt_default"
+        android:textSize="30sp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time"/>
-
+        android:id="@+id/timeInputUnit1"
+        android:text="sec"
+        android:textSize="30sp"
+        android:layout_alignBaseline="@+id/timeInput"
+        android:layout_alignBottom="@+id/timeInput"
+        android:layout_toRightOf="@+id/txtTo"
+        android:layout_toEndOf="@+id/txtTo"
+        android:layout_marginLeft="59dp"
+        android:layout_marginStart="59dp" />
 </RelativeLayout>
