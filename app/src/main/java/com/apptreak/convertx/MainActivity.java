@@ -7,12 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity  {
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.length);
         //Pushing drawable
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.tab_icon_length));
@@ -33,7 +35,33 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-            }
+                switch(tab.getPosition()) {
+                    case 0:
+                        viewPager.setCurrentItem(0);
+                        toolbar.setTitle(R.string.length);
+                        break;
+                    case 1:
+                        viewPager.setCurrentItem(1);
+                        toolbar.setTitle(R.string.area);
+                        break;
+                    case 2:
+                        viewPager.setCurrentItem(2);
+                        toolbar.setTitle(R.string.temp);
+                        break;
+                    case 3:
+                        viewPager.setCurrentItem(3);
+                        toolbar.setTitle(R.string.weight);
+                        break;
+                    case 4:
+                        viewPager.setCurrentItem(4);
+                        toolbar.setTitle(R.string.time);
+                        break;
+                    case 5:
+                        viewPager.setCurrentItem(5);
+                        toolbar.setTitle(R.string.vol);
+                        break;
+
+            }}
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {

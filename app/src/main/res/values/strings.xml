@@ -11,5 +11,12 @@
     <string name="btn_inch">in</string>
     <string name="txt_default">X</string>
     <string name="txt_To">To</string>
+    <string name="length">Length</string>
+    <string name="area">Area</string>
+    <string name="vol">Volume</string>
+    <string name="time">Time</string>
+    <string name="temp">Temperature</string>
+    <string name="weight">Weight</string>
+
 
 </resources>

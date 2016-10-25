@@ -3,6 +3,7 @@ package com.apptreak.convertx;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v7.widget.Toolbar;
 
 /**
  * Created by Farman on 10/22/2016.
@@ -13,6 +14,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     public PagerAdapter(FragmentManager fm, int numOfTabs) {
         super(fm);
+
         this.noOfTabs = numOfTabs;
     }
 
