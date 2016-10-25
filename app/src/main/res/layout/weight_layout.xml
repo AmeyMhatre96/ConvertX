@@ -1,9 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/lengthLayout">
+
+    <EditText
+        android:id="@+id/textWeightInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:ems="10"
+        android:hint="@string/eg_input"
+        android:inputType="numberDecimal"
+        android:textAlignment="center" />
+
+    <HorizontalScrollView
+        android:id="@+id/inputUnitsScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textWeightInput"
+        android:layout_marginTop="12dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonWeightGrams"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_gram"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/buttonWeightKg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_kg"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonWeightMg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_mg"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonWeightTons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_ton"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonWeightPounds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_pound"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonWeightCarat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_carat"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/txtTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputUnitsScroll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/txt_To"
+        android:textSize="30sp" />
+
+    <HorizontalScrollView
+        android:id="@+id/outputUnitsScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTo"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonWeightGramsOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_gram"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/buttonWeightKgOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_kg"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonWeightMgOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_mg"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonWeightTonsOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_ton"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonWeightPoundsOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_pound"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/buttonWeightCaratOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_carat"
+                android:textAllCaps="false" />
+
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/textWeightOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/outputUnitsScroll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/txt_default"
+        android:textSize="30sp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Weight"/>
-
+        android:id="@+id/textWeightUnit"
+        android:text="@string/button_weight_default"
+        android:textSize="30sp"
+        android:layout_alignBaseline="@+id/textWeightInput"
+        android:layout_alignBottom="@+id/textWeightInput"
+        android:layout_toRightOf="@+id/txtTo"
+        android:layout_toEndOf="@+id/txtTo"
+        android:layout_marginLeft="59dp"
+        android:layout_marginStart="59dp" />
 </RelativeLayout>

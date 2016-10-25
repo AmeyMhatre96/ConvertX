@@ -1,6 +1,19 @@
 <resources>
+
     <string name="app_name">Convert X</string>
     <string name="eg_input">Enter a number</string>
+    <string name="txt_default">X</string>
+    <string name="txt_To">To</string>
+
+    <!--Tab titles-->
+    <string name="length">Length</string>
+    <string name="area">Area</string>
+    <string name="vol">Volume</string>
+    <string name="time">Time</string>
+    <string name="temp">Temperature</string>
+    <string name="weight">Weight</string>
+
+    <!--Length -->
     <string name="btn_cm">cm</string>
     <string name="btn_m">m</string>
     <string name="btn_mm">mm</string>
@@ -9,14 +22,30 @@
     <string name="btn_nm">nm</string>
     <string name="btn_ft">ft</string>
     <string name="btn_inch">in</string>
-    <string name="txt_default">X</string>
-    <string name="txt_To">To</string>
-    <string name="length">Length</string>
-    <string name="area">Area</string>
-    <string name="vol">Volume</string>
-    <string name="time">Time</string>
-    <string name="temp">Temperature</string>
-    <string name="weight">Weight</string>
+
+
+    <!--Weight -->
+    <string name="button_gram">gram</string>
+    <string name="button_kg">kg</string>
+    <string name="button_mg">mg</string>
+    <string name="button_ton">ton</string>
+    <string name="button_pound">pound</string>
+    <string name="button_carat">carat</string>
+    <string name="button_weight_default">gram</string>
+
+
+    <!--Time -->
+    <string name="button_sec">sec</string>
+    <string name="button_min">min</string>
+    <string name="button_hour">hour</string>
+    <string name="button_day">day</string>
+    <string name="button_week">week</string>
+    <string name="button_month">month</string>
+    <string name="button_year">year</string>
+    <string name="button_time_default">sec</string>
+
+
+
 
 
 </resources>
