@@ -15,7 +15,6 @@ import android.widget.TextView;
 import java.math.RoundingMode;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
-import static com.apptreak.convertx.R.id.inputUnitLength;
 
 
 public class Length extends Fragment implements View.OnClickListener {
@@ -50,7 +49,7 @@ public class Length extends Fragment implements View.OnClickListener {
         btnInchOp = (Button) lengthLayout.findViewById(R.id.btnInchOp);
 
 
-        lengthInputUnit = (TextView) lengthLayout.findViewById(inputUnitLength);
+        lengthInputUnit = (TextView) lengthLayout.findViewById(R.id.inputUnitLength);
         LengthOutput = (TextView) lengthLayout.findViewById(R.id.txtOp);
         txtLengthInput = (EditText) lengthLayout.findViewById(R.id.txtInput);
 
@@ -205,7 +204,7 @@ public class Length extends Fragment implements View.OnClickListener {
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("μm")) {
             LengthOutput.setText(String.format("%s", df.format(lengthInputNo * 0.0000032808) + " ft"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("nm")) {
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo / 304800000) + " ft"));
+            LengthOutput.setText(String.format("%s", df.format(lengthInputNo * 304800000) + " ft"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("in")) {
             LengthOutput.setText(String.format("%s", df.format(lengthInputNo * 0.0833333333) + " ft"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("m")) {

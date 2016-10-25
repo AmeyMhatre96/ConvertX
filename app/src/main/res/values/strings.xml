@@ -44,8 +44,11 @@
     <string name="button_year">year</string>
     <string name="button_time_default">sec</string>
 
-
-
+ <!--temp-->
+    <string name="button_deg">°C</string>
+    <string name="button_far">°F</string>
+    <string name="button_kel">°K</string>
+    <string name="button_temp_default">°C</string>
 
 
 </resources>

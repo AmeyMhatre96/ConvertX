@@ -1,9 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-    <TextView
+    android:id="@+id/tempLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/tempInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Area"/>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:ems="10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="@string/eg_input"
+        android:inputType="numberDecimal"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/txtTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputUnits"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/txt_To"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:id="@+id/outputUnits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTo"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btndegOp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_deg"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnfarOp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_far"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnkelOp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_kel"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tempOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/outputUnits"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/txt_default"
+        android:textSize="30sp" />
+
+
+    <LinearLayout
+        android:id="@+id/inputUnits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tempInput"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="19dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btndeg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_deg"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnfar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_far"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnkel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_kel"
+            android:textAllCaps="false" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tempUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/inputUnits"
+        android:layout_alignEnd="@+id/tempInput"
+        android:layout_alignRight="@+id/tempInput"
+        android:text="@string/button_temp_default"
+        android:textSize="30sp" />
+
 
 </RelativeLayout>
