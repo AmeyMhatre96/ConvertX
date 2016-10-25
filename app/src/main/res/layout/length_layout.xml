@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lengthLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/lengthLayout">
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/txtInput"
@@ -56,6 +56,31 @@
                 android:text="@string/btn_km"
                 android:textAllCaps="false" />
 
+            <Button
+                android:id="@+id/btnMicrometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_μm"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnNanometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_nm"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btnFoot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_ft"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btnInch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_inch"
+                android:textAllCaps="false" />
         </LinearLayout>
 
     </HorizontalScrollView>
@@ -110,6 +135,32 @@
                 android:text="@string/btn_km"
                 android:textAllCaps="false" />
 
+            <Button
+                android:id="@+id/btnMicrometerOp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_μm"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnNanometerOp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_nm"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btnFootOp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_ft"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btnInchOp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_inch"
+                android:textAllCaps="false" />
+
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -124,15 +175,15 @@
         android:textSize="30sp" />
 
     <TextView
+        android:id="@+id/inputUnitLength"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/inputUnit"
-        android:text="@string/btn_cm"
-        android:textSize="30sp"
         android:layout_alignBaseline="@+id/txtInput"
         android:layout_alignBottom="@+id/txtInput"
-        android:layout_toRightOf="@+id/txtTo"
-        android:layout_toEndOf="@+id/txtTo"
         android:layout_marginLeft="59dp"
-        android:layout_marginStart="59dp" />
+        android:layout_marginStart="59dp"
+        android:layout_toEndOf="@+id/txtTo"
+        android:layout_toRightOf="@+id/txtTo"
+        android:text="@string/btn_cm"
+        android:textSize="30sp" />
 </RelativeLayout>

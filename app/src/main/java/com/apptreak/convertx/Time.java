@@ -3,9 +3,7 @@ package com.apptreak.convertx;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -13,15 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.math.RoundingMode;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
-/**
- * Created by Farman on 10/22/2016.
- */
+
 
 public class Time extends Fragment implements View.OnClickListener {
     private Button buttonSeconds, buttonSecondsOut, buttonMinutes, buttonMinutesOut, buttonHours, buttonHoursOut, buttonDays, buttonDaysOut, buttonWeeks, buttonWeeksOut, buttonMonths, buttonMonthsOut, buttonYears, buttonsYearsOut;
@@ -168,7 +163,7 @@ public class Time extends Fragment implements View.OnClickListener {
                 inputNo = inputNo * 31557600;
         }
     }
-    //Checking the output unit, for instant conversion from input buttons
+    //Checking the LengthOutput unit, for instant conversion from input buttons
     void outputCheck() {
         if (textTimeOut.getText().toString().endsWith("seconds") | textTimeOut.getText().toString().endsWith("seconds"))
             toSeconds();
@@ -240,6 +235,8 @@ public class Time extends Fragment implements View.OnClickListener {
             InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
         }
-        catch (Exception e){};
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

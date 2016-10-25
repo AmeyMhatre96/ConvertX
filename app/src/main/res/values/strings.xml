@@ -5,6 +5,11 @@
     <string name="btn_m">m</string>
     <string name="btn_mm">mm</string>
     <string name="btn_km">km</string>
+    <string name="btn_μm">μm</string>
+    <string name="btn_nm">nm</string>
+    <string name="btn_ft">ft</string>
+    <string name="btn_inch">in</string>
     <string name="txt_default">X</string>
     <string name="txt_To">To</string>
+
 </resources>
