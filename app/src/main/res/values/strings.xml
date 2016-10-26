@@ -44,11 +44,19 @@
     <string name="button_year">year</string>
     <string name="button_time_default">sec</string>
 
- <!--temp-->
+    <!--temp-->
     <string name="button_deg">°C</string>
     <string name="button_far">°F</string>
     <string name="button_kel">°K</string>
     <string name="button_temp_default">°C</string>
 
-
+    <!--Area-->
+    <string name="btn_cm_sqr">cm<sup>2</sup></string>
+    <string name="btn_m_sqr"> m<sup>2</sup></string>
+    <string name="btn_mm_sqr">mm<sup>2</sup></string>
+    <string name="btn_km_sqr">km<sup>2</sup></string>
+    <string name="btn_μm_sqr">μm<sup>2</sup></string>
+    <string name="btn_ft_sqr">ft<sup>2</sup></string>
+    <string name="btn_inch_sqr">in<sup>2</sup></string>
+    <string name="btn_acre">acre</string>
 </resources>

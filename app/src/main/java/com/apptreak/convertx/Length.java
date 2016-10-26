@@ -50,8 +50,8 @@ public class Length extends Fragment implements View.OnClickListener {
 
 
         lengthInputUnit = (TextView) lengthLayout.findViewById(R.id.inputUnitLength);
-        LengthOutput = (TextView) lengthLayout.findViewById(R.id.txtOp);
-        txtLengthInput = (EditText) lengthLayout.findViewById(R.id.txtInput);
+        LengthOutput = (TextView) lengthLayout.findViewById(R.id.txtOpLength);
+        txtLengthInput = (EditText) lengthLayout.findViewById(R.id.txtInputLength);
 
 
         btnCm.setOnClickListener(this);
