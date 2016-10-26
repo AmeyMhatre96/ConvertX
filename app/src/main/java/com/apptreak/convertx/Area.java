@@ -105,33 +105,33 @@ public class Area extends Fragment implements View.OnClickListener {
             case R.id.btnCmOpSqr:
                 convertToCmSqr();
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml("cm<sup>2</sup>", 0));
+                    areaOutputUnit.setText(Html.fromHtml(" cm<sup><small>2</small></sup>", 0));
                 } else {
-                    areaOutputUnit.setText(Html.fromHtml("cm<sup>2</sup>"));
+                    areaOutputUnit.setText(Html.fromHtml(" cm<sup><small>2</small></sup>"));
                 }
                 break;
             case R.id.btnMmOpSqr:
                 convertToMmSqr();
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml("mm<sup>2</sup>", 0));
+                    areaOutputUnit.setText(Html.fromHtml(" mm<sup><small>2</small></sup>", 0));
                 } else {
-                    areaOutputUnit.setText(Html.fromHtml("mm<sup>2</sup>"));
+                    areaOutputUnit.setText(Html.fromHtml(" mm<sup><small>2</small></sup>"));
                 }
                 break;
             case R.id.btnKmOpSqr:
                 convertToKmSqr();
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml("km<sup>2</sup>", 0));
+                    areaOutputUnit.setText(Html.fromHtml(" km<sup><small>2</small></sup>", 0));
                 } else {
-                    areaOutputUnit.setText(Html.fromHtml("km<sup>2</sup>"));
+                    areaOutputUnit.setText(Html.fromHtml(" km<sup><small>2</small></sup>"));
                 }
                 break;
             case R.id.btnMOpSqr:
                 convertToMSqr();
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml("m<sup>2</sup>", 0));
+                    areaOutputUnit.setText(Html.fromHtml(" m<sup><small>2</small></sup>", 0));
                 } else {
-                    areaOutputUnit.setText(Html.fromHtml("m<sup>2</sup>"));
+                    areaOutputUnit.setText(Html.fromHtml(" m<sup><small>2</small></sup>"));
                 }
                 break;
             case R.id.btnMicrometerSqr:
@@ -153,9 +153,9 @@ public class Area extends Fragment implements View.OnClickListener {
             case R.id.btnMicrometerOpSqr:
                 convertToMicroSqr();
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml("μm<sup>2</sup>", 0));
+                    areaOutputUnit.setText(Html.fromHtml(" μm<sup><small>2</small></sup>", 0));
                 } else {
-                    areaOutputUnit.setText(Html.fromHtml("μm<sup>2</sup>"));
+                    areaOutputUnit.setText(Html.fromHtml(" μm<sup><small>2</small></sup>"));
                 }
                 break;
             case R.id.btnAcreOp:
@@ -165,17 +165,17 @@ public class Area extends Fragment implements View.OnClickListener {
             case R.id.btnFootOpSqr:
                 convertToFootSqr();
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml("ft<sup>2</sup>", 0));
+                    areaOutputUnit.setText(Html.fromHtml(" ft<sup><small>2</small></sup>", 0));
                 } else {
-                    areaOutputUnit.setText(Html.fromHtml("ft<sup>2</sup>"));
+                    areaOutputUnit.setText(Html.fromHtml(" ft<sup><small>2</small></sup>"));
                 }
                 break;
             case R.id.btnInchOpSqr:
                 convertToInchSqr();
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml("in<sup>2</sup>", 0));
+                    areaOutputUnit.setText(Html.fromHtml(" in<sup><small>2</small></sup>", 0));
                 } else {
-                    areaOutputUnit.setText(Html.fromHtml("in<sup>2</sup>"));
+                    areaOutputUnit.setText(Html.fromHtml(" in<sup><small>2</small></sup>"));
                 }
                 break;
         }

@@ -51,12 +51,25 @@
     <string name="button_temp_default">°C</string>
 
     <!--Area-->
-    <string name="btn_cm_sqr">cm<sup>2</sup></string>
-    <string name="btn_m_sqr"> m<sup>2</sup></string>
-    <string name="btn_mm_sqr">mm<sup>2</sup></string>
-    <string name="btn_km_sqr">km<sup>2</sup></string>
-    <string name="btn_μm_sqr">μm<sup>2</sup></string>
-    <string name="btn_ft_sqr">ft<sup>2</sup></string>
-    <string name="btn_inch_sqr">in<sup>2</sup></string>
+    <string name="btn_cm_sqr">cm<sup><small>2</small></sup></string>
+    <string name="btn_m_sqr"> m<sup><small>2</small></sup></string>
+    <string name="btn_mm_sqr">mm<sup><small>2</small></sup></string>
+    <string name="btn_km_sqr">km<sup><small>2</small></sup></string>
+    <string name="btn_μm_sqr">μm<sup><small>2</small></sup></string>
+    <string name="btn_ft_sqr">ft<sup><small>2</small></sup></string>
+    <string name="btn_inch_sqr">in<sup><small>2</small></sup></string>
     <string name="btn_acre">acre</string>
+
+    <!--Volume-->
+    <string name="button_cubic_cm">cm<sup><small>3</small></sup></string>
+    <string name="button_cubic_meter">m<sup><small>3</small></sup></string>
+    <string name="button_cubic_mm">mm<sup><small>3</small></sup></string>
+    <string name="button_liter">liter</string>
+    <string name="button_ml">ml</string>
+    <string name="button_gallon">gallon</string>
+    <string name="button_volume_default">liter</string>
+
+
+
+
 </resources>
