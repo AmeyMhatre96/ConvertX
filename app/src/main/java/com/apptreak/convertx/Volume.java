@@ -148,10 +148,11 @@ public class Volume extends Fragment implements View.OnClickListener {
                 inputNo = inputNo / 1000;
             else if (textVolumetUnit.getText().toString().contains("mm") )
                 inputNo = inputNo / 1000000;
-            else if (textVolumetUnit.getText().toString().contains("m"))
-                inputNo = inputNo * 1000;
             else if (textVolumetUnit.getText().toString().contains("ml"))
                 inputNo = inputNo / 1000;
+            else if (textVolumetUnit.getText().toString().contains("m"))
+                inputNo = inputNo * 1000;
+
             else if (textVolumetUnit.getText().toString().contains("gallon"))
                 inputNo = inputNo * 3.78541;
         }
@@ -159,16 +160,17 @@ public class Volume extends Fragment implements View.OnClickListener {
 
     //Checking the Output unit, for instant conversion from input buttons
     void outputCheck() {
-        if (textVolumeOutUnit.getText().toString().contains("m"))
-            toM3();
+        if (textVolumeOutUnit.getText().toString().contains("mm"))
+            toMm3();
+
         else if (textVolumeOutUnit.getText().toString().contains("cm"))
             toCm3();
-        else if (textVolumeOutUnit.getText().toString().contains("mm"))
-            toMm3();
         else if (textVolumeOutUnit.getText().toString().contains("liter") | textVolumeOut.getText().toString().contains("liters"))
             toLiter();
         else if (textVolumeOutUnit.getText().toString().contains("ml"))
             toMl();
+        else if (textVolumeOutUnit.getText().toString().contains("m"))
+            toM3();
         else if (textVolumeOutUnit.getText().toString().contains("gallon") | textVolumeOut.getText().toString().contains("gallons"))
             toGallons();
     }

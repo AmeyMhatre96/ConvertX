@@ -35,27 +35,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_liter"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="#37474f"/>
 
             <Button
                 android:id="@+id/buttonVolumeM3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_meter"
-                android:textAllCaps="false" />
+                android:textColor="#37474f"  android:textAllCaps="false" />
             <Button
                 android:id="@+id/buttonVolumeCm3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_cm"
-                android:textAllCaps="false" />
+                android:textColor="#37474f"  android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonVolumeMm3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_mm"
-                android:textAllCaps="false" />
+                android:textColor="#37474f" android:textAllCaps="false" />
 
 
 
@@ -64,14 +65,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_ml"
-                android:textAllCaps="false" />
+                android:textColor="#37474f" android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonVolumeGallon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_gallon"
-                android:textAllCaps="false" />
+                android:textColor="#37474f" android:textAllCaps="false" />
 
         </LinearLayout>
 
@@ -104,27 +105,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_liter"
-                android:textAllCaps="false" />
+                android:textColor="#37474f" android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonVolumeM3Out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_meter"
-                android:textAllCaps="false" />
+                android:textColor="#37474f"   android:textAllCaps="false" />
             <Button
                 android:id="@+id/buttonVolumeCm3Out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_cm"
-                android:textAllCaps="false" />
+                android:textColor="#37474f"   android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonVolumeMm3Out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_mm"
-                android:textAllCaps="false" />
+                android:textColor="#37474f"   android:textAllCaps="false" />
 
 
             <Button
@@ -132,14 +133,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_ml"
-                android:textAllCaps="false" />
+                android:textColor="#37474f"  android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonVolumeGallonOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_gallon"
-                android:textAllCaps="false" />
+                android:textColor="#37474f"   android:textAllCaps="false" />
 
 
 
