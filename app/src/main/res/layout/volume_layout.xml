@@ -94,7 +94,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/inputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:text="@string/txt_To"
         android:src="@drawable/arrow5" />
 
@@ -103,7 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTo"
-         android:layout_marginTop="10dp"
+         android:layout_marginTop="30dp"
         android:scrollbarSize="5dip"
         android:scrollbarThumbHorizontal="@drawable/sb"
         >
@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_meter"
                   android:textAllCaps="false"
-                />
+                android:background="@drawable/ripple" />
             <Button
                 android:id="@+id/buttonVolumeCm3Out"
                 android:layout_width="wrap_content"
