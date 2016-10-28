@@ -23,7 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/timeInput"
-        android:layout_marginTop="12dp">
+        android:layout_marginTop="12dp"
+        android:scrollbarSize="5dip"
+        android:scrollbarThumbHorizontal="@drawable/sb"
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -35,47 +38,48 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_sec"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"/>
             <Button
                 android:id="@+id/buttonTimeMinutes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_min"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple" android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeHours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_hour"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple" android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeDays"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_day"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple" android:textAllCaps="false" />
             <Button
                 android:id="@+id/buttonTimeWeeks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_week"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple" android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeMonths"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_month"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple" android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeYears"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_year"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple" android:textAllCaps="false" />
 
 
 
@@ -84,21 +88,23 @@
 
     </HorizontalScrollView>
 
-    <TextView
+    <ImageView
         android:id="@+id/txtTo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/inputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:text="@string/txt_To"
-        android:textSize="30sp" />
+        android:src="@drawable/arrow5" />
 
     <HorizontalScrollView
         android:id="@+id/outputUnitsScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTo"
+        android:scrollbarSize="5dip"
+        android:scrollbarThumbHorizontal="@drawable/sb"
         android:layout_marginTop="30dp">
 
         <LinearLayout
@@ -111,48 +117,55 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_sec"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple" />
 
             <Button
                 android:id="@+id/buttonTimeMinutesOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_min"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple" />
 
             <Button
                 android:id="@+id/buttonTimeHoursOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_hour"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"  />
 
             <Button
                 android:id="@+id/buttonTimeDaysOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_day"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"  />
 
             <Button
                 android:id="@+id/buttonTimeWeeksOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_week"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple" />
             <Button
                 android:id="@+id/buttonTimeMonthsOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_month"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple" />
 
             <Button
                 android:id="@+id/buttonTimeYearsOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_year"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple" />
 
 
         </LinearLayout>

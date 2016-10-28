@@ -2,7 +2,8 @@
  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/weightLayout">
+    android:id="@+id/weightLayout"
+    >
 
     <EditText
         android:id="@+id/textVolumeInput"
@@ -23,7 +24,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textVolumeInput"
-        android:layout_marginTop="12dp">
+        android:layout_marginTop="12dp"
+        android:scrollbarSize="5dip"
+        android:scrollbarThumbHorizontal="@drawable/sb"
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -36,27 +40,31 @@
                 android:layout_height="wrap_content"
                 android:text="@string/button_liter"
                 android:textAllCaps="false"
-                android:textColor="#37474f"/>
+                android:background="@drawable/ripple"   />
 
             <Button
                 android:id="@+id/buttonVolumeM3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_meter"
-                android:textColor="#37474f"  android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"    />
+
             <Button
                 android:id="@+id/buttonVolumeCm3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_cm"
-                android:textColor="#37474f"  android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"  />
 
             <Button
                 android:id="@+id/buttonVolumeMm3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_mm"
-                android:textColor="#37474f" android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"  />
 
 
 
@@ -65,35 +73,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_ml"
-                android:textColor="#37474f" android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple" />
 
             <Button
                 android:id="@+id/buttonVolumeGallon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_gallon"
-                android:textColor="#37474f" android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"    />
 
         </LinearLayout>
 
     </HorizontalScrollView>
 
-    <TextView
+    <ImageView
         android:id="@+id/txtTo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/inputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:text="@string/txt_To"
-        android:textSize="30sp" />
+        android:src="@drawable/arrow5" />
 
     <HorizontalScrollView
         android:id="@+id/outputUnitsScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTo"
-        android:layout_marginTop="30dp">
+         android:layout_marginTop="10dp"
+        android:scrollbarSize="5dip"
+        android:scrollbarThumbHorizontal="@drawable/sb"
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -105,27 +118,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_liter"
-                android:textColor="#37474f" android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"   />
 
             <Button
                 android:id="@+id/buttonVolumeM3Out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_meter"
-                android:textColor="#37474f"   android:textAllCaps="false" />
+                  android:textAllCaps="false"
+                />
             <Button
                 android:id="@+id/buttonVolumeCm3Out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_cm"
-                android:textColor="#37474f"   android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple" />
 
             <Button
                 android:id="@+id/buttonVolumeMm3Out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_cubic_mm"
-                android:textColor="#37474f"   android:textAllCaps="false" />
+                 android:textAllCaps="false"
+                android:background="@drawable/ripple"
+                />
 
 
             <Button
@@ -133,14 +151,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_ml"
-                android:textColor="#37474f"  android:textAllCaps="false" />
+                 android:textAllCaps="false"
+                android:background="@drawable/ripple"
+                />
 
             <Button
                 android:id="@+id/buttonVolumeGallonOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_gallon"
-                android:textColor="#37474f"   android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"
+                />
 
 
 
@@ -181,4 +203,6 @@
         android:layout_toRightOf="@+id/textVolumeOut"
         android:layout_toEndOf="@+id/textVolumeOut"
         android:layout_alignBottom="@+id/textVolumeOut" />
+
+
 </RelativeLayout>

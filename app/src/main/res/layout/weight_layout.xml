@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/weightLayout">
+    android:id="@+id/weightLayout"
+     >
 
     <EditText
         android:id="@+id/textWeightInput"
@@ -24,7 +25,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textWeightInput"
         android:layout_marginTop="12dp"
-        android:scrollbars="none" >
+
+        android:scrollbarSize="5dip"
+        android:scrollbarThumbHorizontal="@drawable/sb"
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -36,80 +40,85 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_gram"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple"   android:textAllCaps="false" />
             <Button
                 android:id="@+id/buttonWeightKg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_kg"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple" android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightMg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_mg"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple"   android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightTons"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_ton"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple" android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightPounds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_pound"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple"   android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightCarat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_carat"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple"  android:textAllCaps="false" />
 
         </LinearLayout>
 
     </HorizontalScrollView>
 
-    <TextView
+    <ImageView
         android:id="@+id/txtTo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/inputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:text="@string/txt_To"
-        android:textSize="30sp" />
+        android:src="@drawable/arrow5" />
 
     <HorizontalScrollView
         android:id="@+id/outputUnitsScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTo"
-        android:layout_marginTop="30dp"
-android:scrollbars="none"        >
+        android:layout_marginTop="25dp"
+        android:scrollbarSize="5dip"
+        android:scrollbarThumbHorizontal="@drawable/sb"
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <Button
                 android:id="@+id/buttonWeightGramsOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_gram"
+                android:background="@drawable/ripple"
                 android:textAllCaps="false" />
             <Button
                 android:id="@+id/buttonWeightKgOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_kg"
+                android:background="@drawable/ripple"
                 android:textAllCaps="false" />
 
             <Button
@@ -117,20 +126,23 @@ android:scrollbars="none"        >
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_mg"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple"  android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightTonsOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_ton"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple" android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightPoundsOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_pound"
+
+                android:background="@drawable/ripple"
+
                 android:textAllCaps="false" />
 
             <Button
@@ -138,7 +150,7 @@ android:scrollbars="none"        >
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_carat"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple"  android:textAllCaps="false" />
 
 
 

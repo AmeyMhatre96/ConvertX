@@ -18,15 +18,15 @@
         android:inputType="numberDecimal"
         android:textAlignment="center" />
 
-    <TextView
+    <ImageView
         android:id="@+id/txtTo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/inputUnits"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:text="@string/txt_To"
-        android:textSize="30sp" />
+        android:src="@drawable/arrow5" />
 
     <LinearLayout
         android:id="@+id/outputUnits"
@@ -42,21 +42,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_deg"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:background="@drawable/ripple"/>
 
         <Button
             android:id="@+id/btnfarOp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_far"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:background="@drawable/ripple"/>
 
         <Button
             android:id="@+id/btnkelOp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_kel"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:background="@drawable/ripple"/>
 
     </LinearLayout>
 
@@ -86,21 +89,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_deg"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:background="@drawable/ripple"/>
 
         <Button
             android:id="@+id/btnfar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_far"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:background="@drawable/ripple"/>
 
         <Button
             android:id="@+id/btnkel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_kel"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:background="@drawable/ripple"/>
 
 
     </LinearLayout>

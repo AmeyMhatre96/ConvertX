@@ -21,7 +21,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtInputLength"
-        android:layout_marginTop="12dp">
+        android:layout_marginTop="12dp"
+        android:scrollbarSize="5dip"
+        android:scrollbarThumbHorizontal="@drawable/sb">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -33,13 +35,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_cm"
-                android:textAllCaps="false" />
+                android:background="@drawable/ripple" android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_m"
+                android:background="@drawable/ripple"
                 android:textAllCaps="false" />
 
             <Button
@@ -47,6 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_mm"
+                android:background="@drawable/ripple"
                 android:textAllCaps="false" />
 
             <Button
@@ -54,6 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_km"
+                android:background="@drawable/ripple"
                 android:textAllCaps="false" />
 
             <Button
@@ -61,6 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_μm"
+                android:background="@drawable/ripple"
                 android:textAllCaps="false" />
 
             <Button
@@ -68,39 +74,46 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_nm"
+                android:background="@drawable/ripple"
                 android:textAllCaps="false" />
             <Button
                 android:id="@+id/btnFoot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_ft"
+                android:background="@drawable/ripple"
                 android:textAllCaps="false" />
             <Button
                 android:id="@+id/btnInch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_inch"
+                android:background="@drawable/ripple"
                 android:textAllCaps="false" />
         </LinearLayout>
 
     </HorizontalScrollView>
 
-    <TextView
+    <ImageView
         android:id="@+id/txtTo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/inputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:text="@string/txt_To"
-        android:textSize="30sp" />
+        android:src="@drawable/arrow5"
+        android:scrollbarSize="5dip"
+        android:scrollbarThumbHorizontal="@drawable/sb"/>
 
     <HorizontalScrollView
         android:id="@+id/outputUnitsScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTo"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:scrollbarSize="5dip"
+        android:scrollbarThumbHorizontal="@drawable/sb">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -112,54 +125,64 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_cm"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"/>
 
             <Button
                 android:id="@+id/btnMOp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_m"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"/>
 
             <Button
                 android:id="@+id/btnMmOp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_mm"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"/>
 
             <Button
                 android:id="@+id/btnKmOp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_km"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"/>
 
             <Button
                 android:id="@+id/btnMicrometerOp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_μm"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"/>
 
             <Button
                 android:id="@+id/btnNanometerOp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_nm"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"/>
+
             <Button
                 android:id="@+id/btnFootOp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_ft"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"/>
+
             <Button
                 android:id="@+id/btnInchOp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_inch"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:background="@drawable/ripple"/>
 
         </LinearLayout>
     </HorizontalScrollView>
