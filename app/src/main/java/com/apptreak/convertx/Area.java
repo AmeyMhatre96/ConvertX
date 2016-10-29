@@ -194,7 +194,7 @@ public class Area extends Fragment implements View.OnClickListener {
     void checkOp() {
         if (areaOutputUnit.getText().toString().contains("mm")) {
             convertToMmSqr();
-        } else if (areaOutputUnit.getText().toString().contains("m2")) {
+        } else if (areaOutputUnit.getText().toString().contains(" m")) {
             convertToMSqr();
         } else if (areaOutputUnit.getText().toString().contains("cm")) {
             convertToCmSqr();

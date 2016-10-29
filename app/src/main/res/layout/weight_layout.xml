@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:id="@+id/weightLayout"
-     >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/textWeightInput"
@@ -12,9 +11,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
+        android:ems="10"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:ems="10"
         android:hint="@string/eg_input"
         android:inputType="numberDecimal"
         android:textAlignment="center" />
@@ -23,12 +22,12 @@
         android:id="@+id/inputUnitsScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textWeightInput"
-        android:layout_marginTop="12dp"
-
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
         android:scrollbarSize="5dip"
-        android:scrollbarThumbHorizontal="@drawable/sb"
-        >
+        android:scrollbarThumbHorizontal="@drawable/sb">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -39,42 +38,49 @@
                 android:id="@+id/buttonWeightGrams"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
                 android:text="@string/button_gram"
-                android:background="@drawable/ripple"   android:textAllCaps="false" />
+                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/buttonWeightKg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
                 android:text="@string/button_kg"
-                android:background="@drawable/ripple" android:textAllCaps="false" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightMg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
                 android:text="@string/button_mg"
-                android:background="@drawable/ripple"   android:textAllCaps="false" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightTons"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
                 android:text="@string/button_ton"
-                android:background="@drawable/ripple" android:textAllCaps="false" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightPounds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
                 android:text="@string/button_pound"
-                android:background="@drawable/ripple"   android:textAllCaps="false" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightCarat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
                 android:text="@string/button_carat"
-                android:background="@drawable/ripple"  android:textAllCaps="false" />
+                android:textAllCaps="false" />
 
         </LinearLayout>
 
@@ -87,61 +93,62 @@
         android:layout_below="@+id/inputUnitsScroll"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:text="@string/txt_To"
-        android:src="@drawable/arrow5" />
+        android:src="@drawable/arrow5"
+        android:text="@string/txt_To" />
 
     <HorizontalScrollView
         android:id="@+id/outputUnitsScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTo"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:scrollbarSize="5dip"
-        android:scrollbarThumbHorizontal="@drawable/sb"
-        >
+        android:scrollbarThumbHorizontal="@drawable/sb">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/buttonWeightGramsOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_gram"
                 android:background="@drawable/ripple"
+                android:text="@string/button_gram"
                 android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/buttonWeightKgOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_kg"
                 android:background="@drawable/ripple"
+                android:text="@string/button_kg"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightMgOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
                 android:text="@string/button_mg"
-                android:background="@drawable/ripple"  android:textAllCaps="false" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightTonsOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
                 android:text="@string/button_ton"
-                android:background="@drawable/ripple" android:textAllCaps="false" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightPoundsOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_pound"
-
                 android:background="@drawable/ripple"
+
+                android:text="@string/button_pound"
 
                 android:textAllCaps="false" />
 
@@ -149,9 +156,9 @@
                 android:id="@+id/buttonWeightCaratOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/ripple"
                 android:text="@string/button_carat"
-                android:background="@drawable/ripple"  android:textAllCaps="false" />
-
+                android:textAllCaps="false" />
 
 
         </LinearLayout>
@@ -168,15 +175,15 @@
         android:textSize="30sp" />
 
     <TextView
+        android:id="@+id/textWeightUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textWeightUnit"
-        android:text="@string/button_weight_default"
-        android:textSize="30sp"
-        android:layout_alignBaseline="@+id/textWeightInput"
         android:layout_alignBottom="@+id/textWeightInput"
-        android:layout_toRightOf="@+id/txtTo"
-        android:layout_toEndOf="@+id/txtTo"
-        android:layout_marginLeft="59dp"
-        android:layout_marginStart="59dp" />
+        android:layout_alignTop="@+id/textWeightInput"
+        android:layout_toEndOf="@+id/textWeightInput"
+        android:layout_toRightOf="@+id/textWeightInput"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/button_weight_default"
+        android:textSize="30sp" />
 </RelativeLayout>

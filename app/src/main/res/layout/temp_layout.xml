@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tempInput"
         android:layout_centerInParent="true"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="18dp"
         android:orientation="horizontal">
 
         <Button
@@ -115,11 +115,12 @@
         android:id="@+id/tempUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/inputUnits"
-        android:layout_alignEnd="@+id/tempInput"
-        android:layout_alignRight="@+id/tempInput"
         android:text="@string/button_temp_default"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:layout_above="@+id/inputUnits"
+        android:layout_toRightOf="@+id/tempInput"
+        android:layout_toEndOf="@+id/tempInput"
+        android:layout_alignTop="@+id/tempInput" />
 
 
 </RelativeLayout>

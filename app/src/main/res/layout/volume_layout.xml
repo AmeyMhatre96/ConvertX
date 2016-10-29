@@ -23,11 +23,12 @@
         android:id="@+id/inputUnitsScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textVolumeInput"
-        android:layout_marginTop="12dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:scrollbarSize="5dip"
         android:scrollbarThumbHorizontal="@drawable/sb"
-        >
+        android:layout_marginTop="100dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -94,7 +95,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/inputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:text="@string/txt_To"
         android:src="@drawable/arrow5" />
 
@@ -103,10 +104,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTo"
-         android:layout_marginTop="30dp"
         android:scrollbarSize="5dip"
         android:scrollbarThumbHorizontal="@drawable/sb"
-        >
+        android:layout_marginTop="30dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -180,19 +180,6 @@
         android:text="@string/txt_default"
         android:textSize="30sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textVolumeUnit"
-        android:text="@string/button_volume_default"
-        android:textSize="30sp"
-        android:layout_alignBaseline="@+id/textVolumeInput"
-        android:layout_alignBottom="@+id/textVolumeInput"
-        android:layout_toRightOf="@+id/txtTo"
-        android:layout_toEndOf="@+id/txtTo"
-        android:layout_marginLeft="59dp"
-        android:layout_marginStart="59dp" />
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -203,6 +190,19 @@
         android:layout_toRightOf="@+id/textVolumeOut"
         android:layout_toEndOf="@+id/textVolumeOut"
         android:layout_alignBottom="@+id/textVolumeOut" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textVolumeUnit"
+        android:text="@string/button_volume_default"
+        android:textSize="30sp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_alignBottom="@+id/textVolumeInput"
+        android:layout_toRightOf="@+id/textVolumeInput"
+        android:layout_toEndOf="@+id/textVolumeInput"
+        android:layout_alignTop="@+id/textVolumeInput" />
 
 
 </RelativeLayout>

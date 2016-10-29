@@ -3,6 +3,7 @@ package com.apptreak.convertx;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,6 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.math.RoundingMode;
-
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
 
@@ -22,8 +21,9 @@ public class Length extends Fragment implements View.OnClickListener {
     TextView lengthInputUnit, LengthOutput;
     EditText txtLengthInput;
     RelativeLayout lengthLayout;
-    java.text.DecimalFormat df = new java.text.DecimalFormat("#.#####");
+    java.text.DecimalFormat df;
     double lengthInputNo;
+    private SwipeRefreshLayout swipeContainer;
 
 
     @Nullable
@@ -52,6 +52,7 @@ public class Length extends Fragment implements View.OnClickListener {
         lengthInputUnit = (TextView) lengthLayout.findViewById(R.id.inputUnitLength);
         LengthOutput = (TextView) lengthLayout.findViewById(R.id.txtOpLength);
         txtLengthInput = (EditText) lengthLayout.findViewById(R.id.txtInputLength);
+        swipeContainer = (SwipeRefreshLayout) lengthLayout.findViewById(R.id.swipeContainer);
 
 
         btnCm.setOnClickListener(this);
@@ -71,6 +72,19 @@ public class Length extends Fragment implements View.OnClickListener {
         btnInch.setOnClickListener(this);
         btnInchOp.setOnClickListener(this);
 
+
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                txtLengthInput.getText().clear();
+                lengthInputUnit.setText(R.string.btn_cm);
+                LengthOutput.setText(R.string.txt_default);
+                swipeContainer.setRefreshing(false);
+
+            }
+        });
+
+
         return lengthLayout;
     }
 
@@ -84,9 +98,17 @@ public class Length extends Fragment implements View.OnClickListener {
 
     }
 
+    void decimalFormat() {
+        if (String.valueOf(lengthInputNo).length() > 15) {
+            df = new java.text.DecimalFormat("0.#####E0");
+        } else {
+            df = new java.text.DecimalFormat("#.########");
+        }
+    }
+
     @Override
     public void onClick(View v) {
-        df.setRoundingMode(RoundingMode.CEILING);
+        decimalFormat();
         if (txtLengthInput.getText().toString().length() != 0) {
             lengthInputNo = Double.parseDouble(txtLengthInput.getText().toString());
         } else {
@@ -198,7 +220,7 @@ public class Length extends Fragment implements View.OnClickListener {
         if (lengthInputUnit.getText().toString().equalsIgnoreCase("cm")) {
             LengthOutput.setText(String.format("%s", df.format(lengthInputNo * 0.032808399) + " ft"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("mm")) {
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo * 0.0032808399) + " ft"));
+            LengthOutput.setText(String.format("%s", lengthInputNo * 0.0032808399 + " ft"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("km")) {
             LengthOutput.setText(String.format("%s", df.format(lengthInputNo * 3280.839895) + " ft"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("μm")) {
