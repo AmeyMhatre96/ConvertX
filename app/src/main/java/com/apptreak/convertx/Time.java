@@ -4,20 +4,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.util.AttributeSet;
-
-import java.math.RoundingMode;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
@@ -32,7 +26,6 @@ public class Time extends Fragment implements View.OnClickListener {
     double inputNo;
     double inp;
 
-    private SwipeRefreshLayout swipeContainer;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -71,7 +64,6 @@ public class Time extends Fragment implements View.OnClickListener {
         buttonMonthsOut.setOnClickListener(this);
         buttonYears.setOnClickListener(this);
         buttonsYearsOut.setOnClickListener(this);
-        swipeContainer = (SwipeRefreshLayout) timeLayout.findViewById(R.id.swipeContainer);
         Context context = getContext();
 
 
@@ -85,8 +77,6 @@ public class Time extends Fragment implements View.OnClickListener {
         } else {
             df = new java.text.DecimalFormat("#.#####");
         }
-
-
     }
 
     public void onClick(View v) {
@@ -203,7 +193,6 @@ public class Time extends Fragment implements View.OnClickListener {
     void toSeconds() {
         decimalFormat(inputNo);
         if (inputNo == 1) {
-
             textTimeOut.setText(String.format("%s", df.format(inputNo) + " second"));
         }
         else {
