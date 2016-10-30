@@ -1,9 +1,11 @@
 package com.apptreak.convertx;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.util.AttributeSet;
 
 import java.math.RoundingMode;
 
@@ -25,9 +28,11 @@ public class Time extends Fragment implements View.OnClickListener {
     TextView textTimeUnit, textTimeOut;
     EditText textTimeInput;
     RelativeLayout timeLayout;
-    java.text.DecimalFormat df = new java.text.DecimalFormat("#.#####");
+    java.text.DecimalFormat df;
     double inputNo;
+    double inp;
 
+    private SwipeRefreshLayout swipeContainer;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -66,19 +71,31 @@ public class Time extends Fragment implements View.OnClickListener {
         buttonMonthsOut.setOnClickListener(this);
         buttonYears.setOnClickListener(this);
         buttonsYearsOut.setOnClickListener(this);
+        swipeContainer = (SwipeRefreshLayout) timeLayout.findViewById(R.id.swipeContainer);
+        Context context = getContext();
 
 
+       return timeLayout;
+    }
 
-        return timeLayout;
+    void decimalFormat(double input) {
+        textTimeOut.setTextSize(35);
+        if (input > 1000000000) {
+            df = new java.text.DecimalFormat("0.#####E0");
+        } else {
+            df = new java.text.DecimalFormat("#.#####");
+        }
+
+
     }
 
     public void onClick(View v) {
-        df.setRoundingMode(RoundingMode.CEILING);
         if (textTimeInput.getText().toString().length() != 0)
             inputNo = Double.parseDouble(textTimeInput.getText().toString());
         else
             inputNo = 0;
         hideSoftKeyboard();
+
 
         switch (v.getId()) {
             case R.id.buttonTimeSeconds:
@@ -184,52 +201,70 @@ public class Time extends Fragment implements View.OnClickListener {
     }
 
     void toSeconds() {
-        if (inputNo == 1)
+        decimalFormat(inputNo);
+        if (inputNo == 1) {
+
             textTimeOut.setText(String.format("%s", df.format(inputNo) + " second"));
-        else
+        }
+        else {
             textTimeOut.setText(String.format("%s", df.format(inputNo) + " seconds"));
+         }
     }
 
     void toMinutes() {
-        if ((inputNo / 60) == 1)
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 60) + " min"));
+        inp = inputNo/60;
+        decimalFormat(inp);
+        if (inp == 1)
+            textTimeOut.setText(String.format("%s", df.format(inp) + " minute"));
         else
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 60) + " minutes"));
-    }
+        {
+            textTimeOut.setText(String.format("%s", df.format(inp) + " minutes"));
+    }}
 
     void toHours() {
-        if ((inputNo / 3600) == 1)
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 3600) + " hour"));
+       inp = inputNo/3600;
+        decimalFormat(inp);
+        if (inp == 1)
+            textTimeOut.setText(String.format("%s", df.format(inp) + " hour"));
         else
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 3600) + " hours"));
+
+            textTimeOut.setText(String.format("%s", df.format(inp) + " hours"));
     }
 
     void toDays() {
-        if ((inputNo / 86400) == 1)
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 86400) + " day"));
+        inp = inputNo/86400;
+        decimalFormat(inp);
+        if (inp == 1)
+            textTimeOut.setText(String.format("%s", df.format(inp) + " day"));
         else
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 86400) + " days"));
+            textTimeOut.setText(String.format("%s", df.format(inp) + " days"));
     }
 
     void toWeeks() {
-        if ((inputNo / 604800) == 1)
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 604800) + " week"));
+        inp = inputNo/604800;
+        decimalFormat(inp);
+        if (inp == 1)
+            textTimeOut.setText(String.format("%s", df.format(inp) + " week"));
         else
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 604800) + " weeks"));
+            textTimeOut.setText(String.format("%s", df.format(inp) + " weeks"));
     }
 
     void toMonths() {
-        if ((inputNo / 2629800) == 1)
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 2629800) + " month"));
+        inp = inputNo/2629800;
+        decimalFormat(inp);
+        if (inp == 1)
+            textTimeOut.setText(String.format("%s", df.format(inp) + " month"));
         else
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 2629800) + " months"));
+            textTimeOut.setText(String.format("%s", df.format(inp) + " months"));
     }
 
     void toYears() {
-        if ((inputNo / 31557600) == 1)
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 31557600) + " year"));
+        inp = inputNo/31557600;
+        decimalFormat(inp);
+        if (inp == 1)
+            textTimeOut.setText(String.format("%s", df.format(inp) + " year"));
         else
-            textTimeOut.setText(String.format("%s", df.format(inputNo / 31557600) + " years"));
+            textTimeOut.setText(String.format("%s", df.format(inp) + " years"));
     }
 
     void hideSoftKeyboard(){

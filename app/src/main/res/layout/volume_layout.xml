@@ -177,7 +177,8 @@
         android:layout_below="@+id/outputUnitsScroll"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:text="@string/txt_default"
+        android:text="X"
+        android:freezesText="true"
         android:textSize="30sp" />
 
 
@@ -189,7 +190,9 @@
         android:layout_alignTop="@+id/textVolumeOut"
         android:layout_toRightOf="@+id/textVolumeOut"
         android:layout_toEndOf="@+id/textVolumeOut"
-        android:layout_alignBottom="@+id/textVolumeOut" />
+        android:layout_alignBottom="@+id/textVolumeOut"
+        android:freezesText="true"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -202,7 +205,8 @@
         android:layout_alignBottom="@+id/textVolumeInput"
         android:layout_toRightOf="@+id/textVolumeInput"
         android:layout_toEndOf="@+id/textVolumeInput"
-        android:layout_alignTop="@+id/textVolumeInput" />
+        android:layout_alignTop="@+id/textVolumeInput"
+        android:freezesText="true"/>
 
 
 </RelativeLayout>

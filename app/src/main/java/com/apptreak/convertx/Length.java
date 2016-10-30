@@ -73,16 +73,7 @@ public class Length extends Fragment implements View.OnClickListener {
         btnInchOp.setOnClickListener(this);
 
 
-        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                txtLengthInput.getText().clear();
-                lengthInputUnit.setText(R.string.btn_cm);
-                LengthOutput.setText(R.string.txt_default);
-                swipeContainer.setRefreshing(false);
 
-            }
-        });
 
 
         return lengthLayout;

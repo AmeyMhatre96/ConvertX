@@ -130,6 +130,7 @@ public class Weight extends Fragment implements View.OnClickListener {
                 weightConversion();
                 toCarats();
                 break;
+
         }
     }
 

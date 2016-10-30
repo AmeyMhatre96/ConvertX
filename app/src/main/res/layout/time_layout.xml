@@ -178,7 +178,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/outputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:freezesText="true"  android:layout_marginTop="30dp"
         android:text="@string/txt_default"
         android:textSize="30sp" />
 
@@ -191,7 +191,7 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:layout_alignBottom="@+id/timeInput"
-        android:layout_toRightOf="@+id/timeInput"
+        android:freezesText="true"     android:layout_toRightOf="@+id/timeInput"
         android:layout_toEndOf="@+id/timeInput"
         android:layout_alignTop="@+id/timeInput" />
 </RelativeLayout>

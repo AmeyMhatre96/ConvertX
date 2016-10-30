@@ -192,7 +192,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:text="@string/txt_default"
-        android:textSize="30sp" />
+        android:freezesText="true"    android:textSize="30sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -200,7 +200,7 @@
         android:id="@+id/inputUnitArea"
         android:text="@string/btn_cm_sqr"
         android:textSize="30sp"
-
+        android:freezesText="true"
         android:layout_alignBottom="@+id/txtInputArea"
         android:layout_toRightOf="@+id/txtInputArea"
         android:layout_toEndOf="@+id/txtInputArea"
@@ -213,7 +213,7 @@
         android:id="@+id/areaOutputUnit"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/outputUnitsScroll"
-       android:layout_toRightOf="@+id/txtOpArea"
+        android:freezesText="true"  android:layout_toRightOf="@+id/txtOpArea"
         android:layout_toEndOf="@+id/txtOpArea"/>
 
 </RelativeLayout>

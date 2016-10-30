@@ -65,11 +65,15 @@ public class Volume extends Fragment implements View.OnClickListener {
         buttonGallon.setOnClickListener(this);
         buttonGallonOut.setOnClickListener(this);
 
+
         return volumeLayout;
     }
 
+
+
+
     public void onClick(View v) {
-        df.setRoundingMode(RoundingMode.CEILING);
+
         if (textVolumeInput.getText().toString().length() != 0)
             inputNo = Double.parseDouble(textVolumeInput.getText().toString());
         else

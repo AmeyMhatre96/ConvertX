@@ -72,7 +72,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:text="@string/txt_default"
-        android:textSize="30sp" />
+        android:freezesText="true"      android:textSize="30sp" />
 
 
     <LinearLayout
@@ -120,7 +120,7 @@
         android:layout_above="@+id/inputUnits"
         android:layout_toRightOf="@+id/tempInput"
         android:layout_toEndOf="@+id/tempInput"
-        android:layout_alignTop="@+id/tempInput" />
+        android:freezesText="true"     android:layout_alignTop="@+id/tempInput" />
 
 
 </RelativeLayout>

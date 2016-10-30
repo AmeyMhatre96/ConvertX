@@ -196,7 +196,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:text="@string/txt_default"
-                android:textSize="30sp" />
+                android:freezesText="true" android:textSize="30sp" />
 
             <EditText
                 android:id="@+id/txtInputLength"
@@ -218,7 +218,7 @@
                 android:layout_toEndOf="@+id/txtInputLength"
                 android:layout_toRightOf="@+id/txtInputLength"
                 android:text="@string/btn_cm"
-                android:textSize="30sp" />
+                android:freezesText="true"      android:textSize="30sp" />
 
         </RelativeLayout>
 

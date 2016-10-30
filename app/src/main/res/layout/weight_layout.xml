@@ -15,7 +15,7 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:hint="@string/eg_input"
-        android:inputType="numberDecimal"
+        android:inputType="number|numberDecimal"
         android:textAlignment="center" />
 
     <HorizontalScrollView
@@ -171,7 +171,7 @@
         android:layout_below="@+id/outputUnitsScroll"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:text="@string/txt_default"
+        android:freezesText="true"
         android:textSize="30sp" />
 
     <TextView
@@ -183,7 +183,7 @@
         android:layout_toEndOf="@+id/textWeightInput"
         android:layout_toRightOf="@+id/textWeightInput"
         android:ellipsize="end"
-        android:maxLines="1"
+        android:freezesText="true" android:maxLines="1"
         android:text="@string/button_weight_default"
         android:textSize="30sp" />
 </RelativeLayout>
