@@ -5,7 +5,6 @@
        android:fillAfter="false" android:duration="400" />
     <set>
         <translate   android:toXDelta="4%"
-            android:toYDelta="0%" android:duration="400"
-         />
+            android:toYDelta="0%" android:duration="400" />
     </set>
 </set>
