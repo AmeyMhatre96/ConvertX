@@ -296,7 +296,7 @@ public class Time extends Fragment implements View.OnClickListener {
         if (inp == 1)
             unit  = " year";
         else
-            unit = " year";
+            unit = " years";
         decimalFormat(inputNo, unit);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
