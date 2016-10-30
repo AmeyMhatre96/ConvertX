@@ -77,25 +77,7 @@ public class Weight extends Fragment implements View.OnClickListener {
             df = new java.text.DecimalFormat("0.#####E0");
         }
 
-        if(String.format("%s", df.format(input) + unit).length() > 14 && !flag) {
 
-            Animation a = AnimationUtils.loadAnimation(getActivity(), R.anim.animatedown);
-            a.reset();
-            a.setFillAfter(true);
-            textWeightOut.clearAnimation();
-            textWeightOut.startAnimation(a);
-
-            flag = true;
-        }
-        if(String.format("%s", df.format(input) + unit).length() <= 14 && flag)
-        { Animation a = AnimationUtils.loadAnimation(getActivity(), R.anim.animationup);
-            a.reset();
-            a.setFillAfter(true);
-            textWeightOut.clearAnimation();
-            textWeightOut.startAnimation(a);
-
-            flag = false;
-        }
 
     }
 

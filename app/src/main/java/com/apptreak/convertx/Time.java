@@ -89,27 +89,7 @@ public class Time extends Fragment implements View.OnClickListener {
             df = new java.text.DecimalFormat("0.#####E0");
         }
 
-        if(String.format("%s", df.format(input) + unit).length() > 15 && !flag) {
-            System.out.println(String.format("%s", df.format(inputNo) + " second").length());
-            Animation a = AnimationUtils.loadAnimation(getActivity(), R.anim.animatedown);
 
-            a.reset();
-            a.setFillAfter(true);
-            textTimeOut.clearAnimation();
-            textTimeOut.startAnimation(a);
-
-            flag = true;
-        }
-        if(String.format("%s", df.format(input) + unit).length() <= 15 && flag)
-        {  Animation a = AnimationUtils.loadAnimation(getActivity(), R.anim.animationup);
-
-            a.reset();
-            a.setFillAfter(true);
-            textTimeOut.clearAnimation();
-            textTimeOut.startAnimation(a);
-
-            flag = false;
-        }
 
     }
 
