@@ -36,7 +36,7 @@ public class Time extends Fragment implements View.OnClickListener {
     boolean flag = false;
     String unit;
 
-    private SwipeRefreshLayout swipeContainer;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -75,7 +75,7 @@ public class Time extends Fragment implements View.OnClickListener {
         buttonMonthsOut.setOnClickListener(this);
         buttonYears.setOnClickListener(this);
         buttonsYearsOut.setOnClickListener(this);
-        swipeContainer = (SwipeRefreshLayout) timeLayout.findViewById(R.id.swipeContainer);
+
         Context context = getContext();
 
 
@@ -83,16 +83,16 @@ public class Time extends Fragment implements View.OnClickListener {
     }
 
     void decimalFormat(double input,String unit) {
+        df = new java.text.DecimalFormat("#.#####");
 
-        if (input > 100000000000.0) {
+        if (String.format("%s", df.format(input)).length() > 12)  {
             df = new java.text.DecimalFormat("0.#####E0");
-        } else {
-            df = new java.text.DecimalFormat("#.#####");
         }
 
         if(String.format("%s", df.format(input) + unit).length() > 15 && !flag) {
             System.out.println(String.format("%s", df.format(inputNo) + " second").length());
             Animation a = AnimationUtils.loadAnimation(getActivity(), R.anim.animatedown);
+
             a.reset();
             a.setFillAfter(true);
             textTimeOut.clearAnimation();
@@ -100,8 +100,9 @@ public class Time extends Fragment implements View.OnClickListener {
 
             flag = true;
         }
-        if(String.format("%s", df.format(input) + unit).length() < 15 && flag)
-        { Animation a = AnimationUtils.loadAnimation(getActivity(), R.anim.animationup);
+        if(String.format("%s", df.format(input) + unit).length() <= 15 && flag)
+        {  Animation a = AnimationUtils.loadAnimation(getActivity(), R.anim.animationup);
+
             a.reset();
             a.setFillAfter(true);
             textTimeOut.clearAnimation();
@@ -240,7 +241,7 @@ public class Time extends Fragment implements View.OnClickListener {
             unit  = " minute";
         else
             unit = " minutes";
-        decimalFormat(inputNo, unit);
+        decimalFormat(inp, unit);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -251,7 +252,7 @@ public class Time extends Fragment implements View.OnClickListener {
             unit  = " hour";
         else
             unit = " hours";
-        decimalFormat(inputNo, unit);
+        decimalFormat(inp, unit);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -263,7 +264,7 @@ public class Time extends Fragment implements View.OnClickListener {
             unit  = " day";
         else
             unit = " days";
-        decimalFormat(inputNo, unit);
+        decimalFormat(inp, unit);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -274,7 +275,7 @@ public class Time extends Fragment implements View.OnClickListener {
             unit  = " week";
         else
             unit = " weeks";
-        decimalFormat(inputNo, unit);
+        decimalFormat(inp, unit);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -285,7 +286,7 @@ public class Time extends Fragment implements View.OnClickListener {
             unit  = " month";
         else
             unit = " months";
-        decimalFormat(inputNo, unit);
+        decimalFormat(inp, unit);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -297,7 +298,7 @@ public class Time extends Fragment implements View.OnClickListener {
             unit  = " year";
         else
             unit = " years";
-        decimalFormat(inputNo, unit);
+        decimalFormat(inp, unit);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
 

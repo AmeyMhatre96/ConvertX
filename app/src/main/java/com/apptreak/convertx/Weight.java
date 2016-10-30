@@ -7,6 +7,8 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,9 +27,11 @@ public class Weight extends Fragment implements View.OnClickListener {
     TextView textWeightUnit, textWeightOut;
     EditText textWeightInput;
     RelativeLayout weightLayout;
-    java.text.DecimalFormat df = new java.text.DecimalFormat("#.#####");
+    java.text.DecimalFormat df;
     double inputNo;
-
+    double inp;
+    boolean flag = false;
+    String unit;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -66,8 +70,37 @@ public class Weight extends Fragment implements View.OnClickListener {
         return weightLayout;
     }
 
+    void decimalFormat(double input,String unit) {
+        df = new java.text.DecimalFormat("#.#####");
+
+        if (String.format("%s", df.format(input)).length() > 12)  {
+            df = new java.text.DecimalFormat("0.#####E0");
+        }
+
+        if(String.format("%s", df.format(input) + unit).length() > 14 && !flag) {
+
+            Animation a = AnimationUtils.loadAnimation(getActivity(), R.anim.animatedown);
+            a.reset();
+            a.setFillAfter(true);
+            textWeightOut.clearAnimation();
+            textWeightOut.startAnimation(a);
+
+            flag = true;
+        }
+        if(String.format("%s", df.format(input) + unit).length() <= 14 && flag)
+        { Animation a = AnimationUtils.loadAnimation(getActivity(), R.anim.animationup);
+            a.reset();
+            a.setFillAfter(true);
+            textWeightOut.clearAnimation();
+            textWeightOut.startAnimation(a);
+
+            flag = false;
+        }
+
+    }
+
     public void onClick(View v) {
-        df.setRoundingMode(RoundingMode.CEILING);
+
         if (textWeightInput.getText().toString().length() != 0)
             inputNo = Double.parseDouble(textWeightInput.getText().toString());
         else
@@ -152,9 +185,10 @@ public class Weight extends Fragment implements View.OnClickListener {
 
     //Checking the Output unit, for instant conversion from input buttons
     void outputCheck() {
-        if (textWeightOut.getText().toString().endsWith("gram") | textWeightOut.getText().toString().endsWith("grams"))
+        if (textWeightOut.getText().toString().endsWith("gram") | textWeightOut.getText().toString().endsWith("grams")) {
+            System.out.println("True story");
             toGrams();
-        else if (textWeightOut.getText().toString().endsWith("kg"))
+        }else if (textWeightOut.getText().toString().endsWith("kg"))
             toKg();
         else if (textWeightOut.getText().toString().endsWith("mg"))
             toMg();
@@ -168,38 +202,56 @@ public class Weight extends Fragment implements View.OnClickListener {
 
     void toGrams() {
         if (inputNo == 1)
-            textWeightOut.setText(String.format("%s", df.format(inputNo) + " gram"));
+            unit  = " gram";
         else
-            textWeightOut.setText(String.format("%s", df.format(inputNo) + " grams"));
+            unit = " grams";
+        decimalFormat(inputNo, unit);
+        textWeightOut.setText(String.format("%s", df.format(inputNo) + unit));
     }
 
+
     void toKg() {
-        textWeightOut.setText(String.format("%s", df.format(inputNo / 1000) + " kg"));
+        inp = inputNo / 1000;
+        unit = " kg";
+        decimalFormat(inp, unit);
+        textWeightOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
     void toMg() {
-        textWeightOut.setText(String.format("%s", df.format(inputNo * 1000) + " mg"));
+        inp = inputNo * 1000;
+        unit = " mg";
+        decimalFormat(inp, unit);
+        textWeightOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
     void toTons() {
-        if ((inputNo / 86400) == 1)
-            textWeightOut.setText(String.format("%s", df.format(inputNo / 1000000) + " ton"));
+        inp = inputNo / 1000000;
+        if (inp == 1)
+            unit  = " ton";
         else
-            textWeightOut.setText(String.format("%s", df.format(inputNo / 1000000) + " tons"));
+            unit = " tons";
+        decimalFormat(inp, unit);
+        textWeightOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
     void toPounds() {
-        if ((inputNo / 604800) == 1)
-            textWeightOut.setText(String.format("%s", df.format(inputNo / 453.592) + " pound"));
+        inp = inputNo / 453.592;
+        if (inp == 1)
+            unit  = " pound";
         else
-            textWeightOut.setText(String.format("%s", df.format(inputNo / 453.592) + " pounds"));
+            unit = " pounds";
+        decimalFormat(inp, unit);
+        textWeightOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
     void toCarats() {
-        if ((inputNo / 2629800) == 1)
-            textWeightOut.setText(String.format("%s", df.format(inputNo / 0.2) + " carat"));
+        inp = inputNo / 0.2;
+        if (inp == 1)
+            unit  = " pound";
         else
-            textWeightOut.setText(String.format("%s", df.format(inputNo / 0.2) + " carats"));
+            unit = " pounds";
+        decimalFormat(inp, unit);
+        textWeightOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
 

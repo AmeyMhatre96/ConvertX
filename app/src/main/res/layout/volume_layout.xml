@@ -182,17 +182,6 @@
         android:textSize="30sp" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:id="@+id/textVolumeOutUnit"
-        android:layout_alignTop="@+id/textVolumeOut"
-        android:layout_toRightOf="@+id/textVolumeOut"
-        android:layout_toEndOf="@+id/textVolumeOut"
-        android:layout_alignBottom="@+id/textVolumeOut"
-        android:freezesText="true"
-        />
 
     <TextView
         android:layout_width="wrap_content"
