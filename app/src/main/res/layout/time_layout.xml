@@ -190,6 +190,7 @@
         android:textSize="30sp"
         android:ellipsize="end"
         android:maxLines="1"
+       android:layout_centerHorizontal="true"
         android:layout_alignBottom="@+id/timeInput"
         android:freezesText="true"     android:layout_toRightOf="@+id/timeInput"
         android:layout_toEndOf="@+id/timeInput"
