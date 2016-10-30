@@ -83,7 +83,7 @@ public class Length extends Fragment implements View.OnClickListener {
         }
 
     }
-
+//updated
     void decimalFormat(double input) {
         if (input > 100000000000.0) {
             df = new java.text.DecimalFormat("0.#####E0");
