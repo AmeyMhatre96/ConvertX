@@ -97,7 +97,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:text="@string/txt_To"
-        android:src="@drawable/arrow5" />
+        android:src="@drawable/arrow4" />
 
     <HorizontalScrollView
         android:id="@+id/outputUnitsScroll"
