@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/lengthLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clickable="true">
 
     <ImageView
         android:id="@+id/txtTo"
@@ -11,7 +12,7 @@
         android:layout_below="@+id/inputUnitsScroll"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:src="@drawable/arrow5"
+        android:src="@drawable/arrow4"
         android:text="@string/txt_To" />
 
     <HorizontalScrollView

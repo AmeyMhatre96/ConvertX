@@ -1,8 +1,10 @@
 package com.apptreak.convertx;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +21,8 @@ import static android.content.Context.INPUT_METHOD_SERVICE;
 
 public class Length extends Fragment implements View.OnClickListener {
     private Button btnCm, btnM, btnMm, btnKm, btnCmOp, btnMop, btnMmOp, btnKmOp, btnMicrometer, btnMicrometerOp, btnNanometer, btnNanoMeterOp, btnFt, btnFtOp, btnInch, btnInchOp;
-    TextView lengthInputUnit, LengthOutput;
-    EditText txtLengthInput;
+    public TextView lengthInputUnit, LengthOutput;
+   public  EditText txtLengthInput;
     RelativeLayout lengthLayout;
     java.text.DecimalFormat df;
     double lengthInputNo;
@@ -46,6 +48,8 @@ public class Length extends Fragment implements View.OnClickListener {
         btnFtOp = (Button) lengthLayout.findViewById(R.id.btnFootOp);
         btnInch = (Button) lengthLayout.findViewById(R.id.btnInch);
         btnInchOp = (Button) lengthLayout.findViewById(R.id.btnInchOp);
+
+        lengthLayout.setOnClickListener(this);
 
 
         lengthInputUnit = (TextView) lengthLayout.findViewById(R.id.inputUnitLength);
@@ -83,6 +87,12 @@ public class Length extends Fragment implements View.OnClickListener {
         }
 
     }
+    public void clear(){
+     Log.d("asfe","afsa");
+
+        LengthOutput.setText("");
+
+    }
 //updated
     void decimalFormat(double input) {
         if (input > 100000000000.0) {
@@ -92,6 +102,9 @@ public class Length extends Fragment implements View.OnClickListener {
         }
         df.setRoundingMode(RoundingMode.CEILING);
     }
+
+
+
 
     @Override
     public void onClick(View v) {

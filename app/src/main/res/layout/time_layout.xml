@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/lengthLayout">
+    android:id="@+id/lengthLayout"
+    android:clickable="true">
 
     <EditText
         android:id="@+id/timeInput"
@@ -190,7 +191,7 @@
         android:textSize="30sp"
         android:ellipsize="end"
         android:maxLines="1"
-       android:layout_centerHorizontal="true"
+        android:layout_centerHorizontal="true"
         android:layout_alignBottom="@+id/timeInput"
         android:freezesText="true"     android:layout_toRightOf="@+id/timeInput"
         android:layout_toEndOf="@+id/timeInput"
