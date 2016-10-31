@@ -1,18 +1,15 @@
 package com.apptreak.convertx;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity  {
     Toolbar toolbar;
-    Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +31,6 @@ public class MainActivity extends AppCompatActivity  {
         tabLayout.getTabAt(3).getIcon().setColorFilter(Color.parseColor("#1a237e"), PorterDuff.Mode.SRC_IN);
         tabLayout.getTabAt(4).getIcon().setColorFilter(Color.parseColor("#1a237e"), PorterDuff.Mode.SRC_IN);
         tabLayout.getTabAt(5).getIcon().setColorFilter(Color.parseColor("#1a237e"), PorterDuff.Mode.SRC_IN);
-
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 

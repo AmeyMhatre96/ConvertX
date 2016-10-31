@@ -6,12 +6,13 @@
 
     <ImageView
         android:id="@+id/txtTo"
-        android:layout_width="30dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/txtTo_width"
+        android:layout_height="@dimen/txtTo_height"
+        android:scaleType="centerCrop"
         android:layout_below="@+id/inputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/arrow5"
+        android:layout_marginTop="@dimen/margin_top_txtTo"
+        android:src="@drawable/arrow4"
         android:text="@string/txt_To" />
 
     <HorizontalScrollView
@@ -19,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTo"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/margin_top_outputUnitsScroll"
         android:scrollbarSize="5dip"
         android:scrollbarThumbHorizontal="@drawable/sb">
 
@@ -30,64 +31,64 @@
 
             <Button
                 android:id="@+id/btnCmOp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_cm"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnMOp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ripple"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+              android:background="@drawable/ripple"
                 android:text="@string/btn_m"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnMmOp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_mm"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnKmOp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_km"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnMicrometerOp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_μm"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnNanometerOp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_nm"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnFootOp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_ft"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnInchOp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_inch"
                 android:textAllCaps="false" />
@@ -102,7 +103,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="@dimen/margin_top_inputUnitsScroll"
         android:scrollbarSize="5dip"
         android:scrollbarThumbHorizontal="@drawable/sb">
 
@@ -113,64 +114,64 @@
 
             <Button
                 android:id="@+id/btnCm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ripple"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/btn_cm"
+                android:background="@drawable/ripple"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnM"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_m"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnMm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_mm"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnKm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_km"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnMicrometer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_μm"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnNanometer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_nm"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnFoot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_ft"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnInch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/btn_inch"
                 android:textAllCaps="false" />
@@ -184,10 +185,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/outputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/margin_top_output"
         android:freezesText="true"
         android:text="@string/txt_default"
-        android:textSize="30sp" />
+        android:textSize="@dimen/text_size" />
 
     <EditText
         android:id="@+id/txtInputLength"
@@ -195,9 +196,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="@dimen/input_margin_top"
         android:ems="10"
         android:hint="@string/eg_input"
+        android:backgroundTint="@android:color/transparent"
+        android:textCursorDrawable="@null"
+        android:textColor="@color/colorPrimaryText"
         android:inputType="numberDecimal"
         android:textAlignment="center" />
 
@@ -205,12 +209,12 @@
         android:id="@+id/inputUnitLength"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/txtInputLength"
-        android:layout_toEndOf="@+id/txtInputLength"
-        android:layout_toRightOf="@+id/txtInputLength"
         android:freezesText="true"
         android:text="@string/btn_cm"
-        android:textSize="30sp" />
+        android:textSize="@dimen/text_size"
+        android:layout_toRightOf="@+id/txtInputLength"
+        android:layout_alignBottom="@+id/txtInputLength"
+        android:layout_alignTop="@+id/txtInputLength" />
 
 
 </RelativeLayout>

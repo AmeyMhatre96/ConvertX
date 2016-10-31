@@ -20,10 +20,10 @@ import static android.content.Context.INPUT_METHOD_SERVICE;
 
 public class Area extends Fragment implements View.OnClickListener {
     private Button btnCmSqr, btnMSqr, btnMmSqr, btnKmSqr, btnCmSqrOp, btnMSqrop, btnMmSqrOp, btnKmSqrOp, btnAcre, btnAcreOp, btnMicrometerSqrOp, btnMicrometerSqr, btnSqrFt, btnSqrFtOp, btnSqrInch, btnSqrInchOp;
-    TextView areaInputUnit, areaOutput, areaOutputUnit;
+    TextView areaInputUnit, areaOutput;
     EditText txtAreaInput;
     RelativeLayout areaLayout;
-    java.text.DecimalFormat df = new java.text.DecimalFormat("#.#########");
+    java.text.DecimalFormat df;
     double areaInputNo;
 
     @Nullable
@@ -51,7 +51,6 @@ public class Area extends Fragment implements View.OnClickListener {
 
         areaInputUnit = (TextView) areaLayout.findViewById(R.id.inputUnitArea);
         areaOutput = (TextView) areaLayout.findViewById(R.id.txtOpArea);
-        areaOutputUnit = (TextView) areaLayout.findViewById(R.id.areaOutputUnit);
         txtAreaInput = (EditText) areaLayout.findViewById(R.id.txtInputArea);
 
 
@@ -76,9 +75,17 @@ public class Area extends Fragment implements View.OnClickListener {
         return areaLayout;
     }
 
+    void decimalFormat(double input) {
+        if (input > 100000000000.0) {
+            df = new java.text.DecimalFormat("0.#####E0");
+        } else {
+            df = new java.text.DecimalFormat("#.#####");
+        }
+        df.setRoundingMode(RoundingMode.CEILING);
+    }
+
     @Override
     public void onClick(View v) {
-        df.setRoundingMode(RoundingMode.CEILING);
         if (txtAreaInput.getText().toString().length() != 0) {
             areaInputNo = Double.parseDouble(txtAreaInput.getText().toString());
         } else {
@@ -104,35 +111,15 @@ public class Area extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btnCmOpSqr:
                 convertToCmSqr();
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml(" cm<sup><small>2</small></sup>", 0));
-                } else {
-                    areaOutputUnit.setText(Html.fromHtml(" cm<sup><small>2</small></sup>"));
-                }
                 break;
             case R.id.btnMmOpSqr:
                 convertToMmSqr();
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml(" mm<sup><small>2</small></sup>", 0));
-                } else {
-                    areaOutputUnit.setText(Html.fromHtml(" mm<sup><small>2</small></sup>"));
-                }
                 break;
             case R.id.btnKmOpSqr:
                 convertToKmSqr();
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml(" km<sup><small>2</small></sup>", 0));
-                } else {
-                    areaOutputUnit.setText(Html.fromHtml(" km<sup><small>2</small></sup>"));
-                }
                 break;
             case R.id.btnMOpSqr:
                 convertToMSqr();
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml(" m<sup><small>2</small></sup>", 0));
-                } else {
-                    areaOutputUnit.setText(Html.fromHtml(" m<sup><small>2</small></sup>"));
-                }
                 break;
             case R.id.btnMicrometerSqr:
                 areaInputUnit.setText(R.string.btn_μm_sqr);
@@ -152,31 +139,15 @@ public class Area extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btnMicrometerOpSqr:
                 convertToMicroSqr();
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml(" μm<sup><small>2</small></sup>", 0));
-                } else {
-                    areaOutputUnit.setText(Html.fromHtml(" μm<sup><small>2</small></sup>"));
-                }
                 break;
             case R.id.btnAcreOp:
                 convertToAcre();
-                areaOutputUnit.setText(R.string.btn_acre);
                 break;
             case R.id.btnFootOpSqr:
                 convertToFootSqr();
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml(" ft<sup><small>2</small></sup>", 0));
-                } else {
-                    areaOutputUnit.setText(Html.fromHtml(" ft<sup><small>2</small></sup>"));
-                }
                 break;
             case R.id.btnInchOpSqr:
                 convertToInchSqr();
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    areaOutputUnit.setText(Html.fromHtml(" in<sup><small>2</small></sup>", 0));
-                } else {
-                    areaOutputUnit.setText(Html.fromHtml(" in<sup><small>2</small></sup>"));
-                }
                 break;
         }
     }
@@ -192,21 +163,21 @@ public class Area extends Fragment implements View.OnClickListener {
     }
 
     void checkOp() {
-        if (areaOutputUnit.getText().toString().contains("mm")) {
+        if (areaOutput.getText().toString().contains("mm")) {
             convertToMmSqr();
-        } else if (areaOutputUnit.getText().toString().contains(" m")) {
+        } else if (areaOutput.getText().toString().contains(" m")) {
             convertToMSqr();
-        } else if (areaOutputUnit.getText().toString().contains("cm")) {
+        } else if (areaOutput.getText().toString().contains("cm")) {
             convertToCmSqr();
-        } else if (areaOutputUnit.getText().toString().contains("km")) {
+        } else if (areaOutput.getText().toString().contains("km")) {
             convertToKmSqr();
-        } else if (areaOutputUnit.getText().toString().contains("μm")) {
+        } else if (areaOutput.getText().toString().contains("μm")) {
             convertToMicroSqr();
-        } else if (areaOutputUnit.getText().toString().endsWith("acre")) {
+        } else if (areaOutput.getText().toString().endsWith("acre")) {
             convertToAcre();
-        } else if (areaOutputUnit.getText().toString().contains("ft")) {
+        } else if (areaOutput.getText().toString().contains("ft")) {
             convertToFootSqr();
-        } else if (areaOutputUnit.getText().toString().contains("in")) {
+        } else if (areaOutput.getText().toString().contains("in")) {
             convertToInchSqr();
         }
     }
@@ -214,164 +185,198 @@ public class Area extends Fragment implements View.OnClickListener {
 
     private void convertToInchSqr() {
         if (areaInputUnit.getText().toString().contains("cm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.15500031)));
+            areaInputNo = areaInputNo * 0.15500031;
         } else if (areaInputUnit.getText().toString().contains("mm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.0015500031)));
+            areaInputNo = areaInputNo * 0.0015500031;
         } else if (areaInputUnit.getText().toString().contains("km")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 1550003100)));
+            areaInputNo = areaInputNo * 1550003100;
         } else if (areaInputUnit.getText().toString().contains("μm")) {
-
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 645160000)));
+            areaInputNo = areaInputNo / 645160000;
         } else if (areaInputUnit.getText().toString().equalsIgnoreCase("acre")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 6272640)));
+            areaInputNo = areaInputNo * 6272640;
         } else if (areaInputUnit.getText().toString().contains("ft")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 144)));
+            areaInputNo = areaInputNo * 144;
         } else if (areaInputUnit.getText().toString().contains(" m")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 1550.0031)));
+            areaInputNo = areaInputNo * 1550.0031;
+        }
+
+        decimalFormat(areaInputNo);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " in<sup><small>2</small></sup>"), 0));
         } else {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo)));
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " in<sup><small>2</small></sup>")));
         }
 
     }
 
     private void convertToFootSqr() {
         if (areaInputUnit.getText().toString().contains("cm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.001076391)));
+            areaInputNo = areaInputNo * 0.001076391;
         } else if (areaInputUnit.getText().toString().contains("mm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.0000107639)));
+            areaInputNo = areaInputNo * 0.0000107639;
         } else if (areaInputUnit.getText().toString().contains("km")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 10763910.417)));
+            areaInputNo = areaInputNo * 10763910.417;
         } else if (areaInputUnit.getText().toString().contains("μm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 92903040000L)));
+            areaInputNo = areaInputNo / 92903040000L;
         } else if (areaInputUnit.getText().toString().equalsIgnoreCase("acre")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 43560)));
+            areaInputNo = areaInputNo * 43560;
         } else if (areaInputUnit.getText().toString().contains("in")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.0069444444)));
+            areaInputNo = areaInputNo * 0.0069444444;
         } else if (areaInputUnit.getText().toString().contains("m")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 10.763910417)));
+            areaInputNo = areaInputNo * 10.763910417;
+        }
+
+        decimalFormat(areaInputNo);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " ft<sup><small>2</small></sup>"), 0));
         } else {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo)));
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " ft<sup><small>2</small></sup>")));
         }
     }
 
     private void convertToAcre() {
         if (areaInputUnit.getText().toString().contains("cm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 40468564.224)));
+            areaInputNo = areaInputNo / 40468564.224;
         } else if (areaInputUnit.getText().toString().contains("mm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 4046856422.4)));
+            areaInputNo = areaInputNo / 4046856422.4;
         } else if (areaInputUnit.getText().toString().contains("km")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 247.10538147)));
+            areaInputNo = areaInputNo * 247.10538147;
         } else if (areaInputUnit.getText().toString().contains("μm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 4046856422400000L)));
+            areaInputNo = areaInputNo / 4046856422400000L;
         } else if (areaInputUnit.getText().toString().contains("ft")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.0000229568)));
+            areaInputNo = areaInputNo * 0.0000229568;
         } else if (areaInputUnit.getText().toString().contains("in")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.0000229568)));
+            areaInputNo = areaInputNo * 0.0000229568;
         } else if (areaInputUnit.getText().toString().contains(" m")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.0002471054)));
-        } else {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo) + " acre"));
+            areaInputNo = areaInputNo * 0.0002471054;
         }
+        decimalFormat(areaInputNo);
+        areaOutput.setText(String.format("%s ", df.format(areaInputNo) + " acre"));
     }
 
 
     private void convertToMicroSqr() {
         if (areaInputUnit.getText().toString().contains("cm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 100000000)));
+            areaInputNo = areaInputNo * 100000000;
         } else if (areaInputUnit.getText().toString().contains("mm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 1000000)));
+            areaInputNo = areaInputNo * 1000000;
         } else if (areaInputUnit.getText().toString().contains("km")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 1000000000000000000L)));
+            areaInputNo = areaInputNo * 1000000000000000000L;
         } else if (areaInputUnit.getText().toString().equalsIgnoreCase("acre")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 4046856422400000L)));
+            areaInputNo = areaInputNo * 4046856422400000L;
         } else if (areaInputUnit.getText().toString().contains("ft")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 92903040000L)));
+            areaInputNo = areaInputNo * 92903040000L;
         } else if (areaInputUnit.getText().toString().contains("in")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 645160000)));
+            areaInputNo = areaInputNo * 645160000;
         } else if (areaInputUnit.getText().toString().contains(" m")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 1000000000000L)));
+            areaInputNo = areaInputNo * 1000000000000L;
+        }
+
+        decimalFormat(areaInputNo);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " μm<sup><small>2</small></sup>"), 0));
         } else {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo)));
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " μm<sup><small>2</small></sup>")));
         }
     }
 
     private void convertToCmSqr() {
         if (areaInputUnit.getText().toString().contains("μm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 100000000)));
+            areaInputNo = areaInputNo / 100000000;
         } else if (areaInputUnit.getText().toString().contains("mm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.01)));
+            areaInputNo = areaInputNo * 0.01;
         } else if (areaInputUnit.getText().toString().contains("km")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 10000000000L)));
+            areaInputNo = areaInputNo * 10000000000L;
         } else if (areaInputUnit.getText().toString().equalsIgnoreCase("acre")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 40468564.224)));
+            areaInputNo = areaInputNo * 40468564.224;
         } else if (areaInputUnit.getText().toString().contains("ft")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 929.0304)));
+            areaInputNo = areaInputNo * 929.0304;
         } else if (areaInputUnit.getText().toString().contains("in")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 6.4516)));
+            areaInputNo = areaInputNo * 6.4516;
         } else if (areaInputUnit.getText().toString().contains(" m")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 10000)));
+            areaInputNo = areaInputNo * 10000;
+        }
+
+        decimalFormat(areaInputNo);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " cm<sup><small>2</small></sup>"), 0));
         } else {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo)));
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " cm<sup><small>2</small></sup>")));
         }
     }
 
     private void convertToMSqr() {
         if (areaInputUnit.getText().toString().contains("μm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 1000000000000L)));
+            areaInputNo = areaInputNo / 1000000000000L;
         } else if (areaInputUnit.getText().toString().contains("mm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.000001)));
+            areaInputNo = areaInputNo * 0.000001;
         } else if (areaInputUnit.getText().toString().contains("km")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 1000000)));
+            areaInputNo = areaInputNo * 1000000;
         } else if (areaInputUnit.getText().toString().equalsIgnoreCase("acre")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 4046.8564224) ));
+            areaInputNo = areaInputNo * 4046.8564224;
         } else if (areaInputUnit.getText().toString().contains("ft")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.09290304)));
+            areaInputNo = areaInputNo * 0.09290304;
         } else if (areaInputUnit.getText().toString().contains("in")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.00064516)));
+            areaInputNo = areaInputNo * 0.00064516;
         } else if (areaInputUnit.getText().toString().contains("cm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.0001) ));
+            areaInputNo = areaInputNo * 0.0001;
+        }
+
+        decimalFormat(areaInputNo);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " m<sup><small>2</small></sup>"), 0));
         } else {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo) ));
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " m<sup><small>2</small></sup>")));
         }
     }
 
     private void convertToMmSqr() {
         if (areaInputUnit.getText().toString().contains("μm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 0.000001) ));
+            areaInputNo = areaInputNo * 0.000001;
         } else if (areaInputUnit.getText().toString().contains(" m")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 1000000) ));
+            areaInputNo = areaInputNo * 1000000;
         } else if (areaInputUnit.getText().toString().contains("km")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 1000000000000L)));
+            areaInputNo = areaInputNo * 1000000000000L;
         } else if (areaInputUnit.getText().toString().equalsIgnoreCase("acre")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 4046856422.4) ));
+            areaInputNo = areaInputNo * 4046856422.4;
         } else if (areaInputUnit.getText().toString().contains("ft")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 92903.04) ));
+            areaInputNo = areaInputNo * 92903.04;
         } else if (areaInputUnit.getText().toString().contains("in")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 645.16)));
+            areaInputNo = areaInputNo * 645.16;
         } else if (areaInputUnit.getText().toString().contains("cm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo * 100)));
+            areaInputNo = areaInputNo * 100;
+        }
+
+        decimalFormat(areaInputNo);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " mm<sup><small>2</small></sup>"), 0));
         } else {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo) ));
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " mm<sup><small>2</small></sup>")));
         }
     }
 
     private void convertToKmSqr() {
         if (areaInputUnit.getText().toString().contains("μm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 1000000000000000000L) ));
+            areaInputNo = areaInputNo / 1000000000000000000L;
         } else if (areaInputUnit.getText().toString().contains(" m")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 1000000L)));
+            areaInputNo = areaInputNo / 1000000L;
         } else if (areaInputUnit.getText().toString().contains("mm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 1000000000000L)));
+            areaInputNo = areaInputNo / 1000000000000L;
         } else if (areaInputUnit.getText().toString().equalsIgnoreCase("acre")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 247.10538147) ));
+            areaInputNo = areaInputNo / 247.10538147;
         } else if (areaInputUnit.getText().toString().contains("ft")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 10763910.417)));
+            areaInputNo = areaInputNo / 10763910.417;
         } else if (areaInputUnit.getText().toString().contains("in")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 1550003100)));
+            areaInputNo = areaInputNo / 1550003100;
         } else if (areaInputUnit.getText().toString().contains("cm")) {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo / 10000000000L)));
+            areaInputNo = areaInputNo / 10000000000L;
+        }
+
+        decimalFormat(areaInputNo);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " km<sup><small>2</small></sup>"), 0));
         } else {
-            areaOutput.setText(String.format("%s ", df.format(areaInputNo)));
+            areaOutput.setText(Html.fromHtml(String.format("%s", df.format(areaInputNo) + " km<sup><small>2</small></sup>")));
         }
     }
 }

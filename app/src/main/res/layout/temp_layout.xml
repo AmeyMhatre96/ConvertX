@@ -10,8 +10,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="@dimen/input_margin_top"
         android:ems="10"
+        android:backgroundTint="@android:color/transparent"
+        android:textCursorDrawable="@null"
+        android:textColor="@color/colorPrimaryText"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:hint="@string/eg_input"
@@ -20,13 +23,14 @@
 
     <ImageView
         android:id="@+id/txtTo"
-        android:layout_width="30dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/txtTo_width"
+        android:layout_height="@dimen/txtTo_height"
+        android:scaleType="centerCrop"
         android:layout_below="@+id/inputUnits"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:text="@string/txt_To"
-        android:src="@drawable/arrow4" />
+        android:layout_marginTop="@dimen/margin_top_txtTo"
+        android:src="@drawable/arrow4"
+        android:text="@string/txt_To" />
 
     <LinearLayout
         android:id="@+id/outputUnits"
@@ -34,32 +38,32 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTo"
         android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/margin_top_outputUnitsScroll"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btndegOp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:background="@drawable/ripple"
             android:text="@string/button_deg"
-            android:textAllCaps="false"
-            android:background="@drawable/ripple"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btnfarOp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:background="@drawable/ripple"
             android:text="@string/button_far"
-            android:textAllCaps="false"
-            android:background="@drawable/ripple"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btnkelOp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:background="@drawable/ripple"
             android:text="@string/button_kel"
-            android:textAllCaps="false"
-            android:background="@drawable/ripple"/>
+            android:textAllCaps="false" />
 
     </LinearLayout>
 
@@ -70,9 +74,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/outputUnits"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/margin_top_output"
+        android:freezesText="true"
         android:text="@string/txt_default"
-        android:freezesText="true"      android:textSize="30sp" />
+        android:textSize="@dimen/text_size" />
 
 
     <LinearLayout
@@ -81,32 +86,32 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tempInput"
         android:layout_centerInParent="true"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="@dimen/margin_top_temp_input_unit"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btndeg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:background="@drawable/ripple"
             android:text="@string/button_deg"
-            android:textAllCaps="false"
-            android:background="@drawable/ripple"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btnfar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:background="@drawable/ripple"
             android:text="@string/button_far"
-            android:textAllCaps="false"
-            android:background="@drawable/ripple"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btnkel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:background="@drawable/ripple"
             android:text="@string/button_kel"
-            android:textAllCaps="false"
-            android:background="@drawable/ripple"/>
+            android:textAllCaps="false" />
 
 
     </LinearLayout>
@@ -115,12 +120,13 @@
         android:id="@+id/tempUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_temp_default"
-        android:textSize="30sp"
         android:layout_above="@+id/inputUnits"
-        android:layout_toRightOf="@+id/tempInput"
+        android:layout_alignTop="@+id/tempInput"
         android:layout_toEndOf="@+id/tempInput"
-        android:freezesText="true"     android:layout_alignTop="@+id/tempInput" />
+        android:layout_toRightOf="@+id/tempInput"
+        android:freezesText="true"
+        android:text="@string/button_temp_default"
+        android:textSize="@dimen/text_size" />
 
 
 </RelativeLayout>

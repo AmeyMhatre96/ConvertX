@@ -87,6 +87,14 @@ public class Temperature extends Fragment implements View.OnClickListener {
         }
     }
 
+    void decimalFormat(double input) {
+        if (input > 100000000000.0) {
+            df = new java.text.DecimalFormat("0.#####E0");
+        } else {
+            df = new java.text.DecimalFormat("#.#####");
+        }
+        df.setRoundingMode(RoundingMode.CEILING);
+    }
 
     void outputCheck() {
         if (textTempOut.getText().toString().endsWith("°C")) {
@@ -101,29 +109,37 @@ public class Temperature extends Fragment implements View.OnClickListener {
 
 
     private void toDeg() {
+
         if (textTempUnit.getText().toString().equalsIgnoreCase("°F")) {
-            textTempOut.setText(String.format("%s", df.format(((tempinputNo - 32) * 5) / 9) + " °C"));
+            tempinputNo = ((tempinputNo - 32) * 5) / 9;
         } else if (textTempUnit.getText().toString().equalsIgnoreCase("°K")) {
-            textTempOut.setText(String.format("%s", df.format(tempinputNo - 273.15) + " °C"));
-        } else  {
-            textTempOut.setText(String.format("%s", df.format(tempinputNo) + " °C"));
+            tempinputNo = tempinputNo - 273.15;
         }
+
+        decimalFormat(tempinputNo);
+        textTempOut.setText(String.format("%s", df.format(tempinputNo) + " °C"));
     }
 
     private void toFar() {
         if (textTempUnit.getText().toString().equalsIgnoreCase("°C")) {
-            textTempOut.setText(String.format("%s", df.format(((tempinputNo * 9) / 5) + 32) + " °F"));
+            tempinputNo = ((tempinputNo * 9) / 5) + 32;
         } else if (textTempUnit.getText().toString().equalsIgnoreCase("°K")) {
-            textTempOut.setText(String.format("%s", df.format(((tempinputNo * 9) / 5) - 459.67) + " °F"));
-        } else textTempOut.setText(String.format("%s", df.format(tempinputNo) + " °F"));
+            tempinputNo = ((tempinputNo * 9) / 5) - 459.67;
+        }
+
+        decimalFormat(tempinputNo);
+        textTempOut.setText(String.format("%s", df.format(tempinputNo) + " °F"));
     }
 
     private void toKel() {
         if (textTempUnit.getText().toString().equalsIgnoreCase("°F")) {
-            textTempOut.setText(String.format("%s", df.format(((tempinputNo + 459.67) * 5) / 9) + " °K"));
+            tempinputNo=((tempinputNo + 459.67) * 5) / 9;
         } else if (textTempUnit.getText().toString().equalsIgnoreCase("°C")) {
-            textTempOut.setText(String.format("%s", df.format(tempinputNo + 273.15) + " °K"));
-        } else textTempOut.setText(String.format("%s", df.format(tempinputNo) + " °K"));
+            tempinputNo=tempinputNo + 273.15;
+        }
+
+        decimalFormat(tempinputNo);
+        textTempOut.setText(String.format("%s", df.format(tempinputNo) + " °K"));
     }
 
     void hideSoftKeyboard() {

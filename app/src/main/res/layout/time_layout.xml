@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lengthLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/lengthLayout">
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/timeInput"
@@ -10,10 +10,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="@dimen/input_margin_top"
+        android:ems="10"
+        android:backgroundTint="@android:color/transparent"
+        android:textCursorDrawable="@null"
+        android:textColor="@color/colorPrimaryText"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:ems="10"
         android:hint="@string/eg_input"
         android:inputType="numberDecimal"
         android:textAlignment="center" />
@@ -25,9 +28,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/margin_top_inputUnitsScroll"
         android:scrollbarSize="5dip"
-        android:scrollbarThumbHorizontal="@drawable/sb"
-        android:layout_marginTop="100dp">
+        android:scrollbarThumbHorizontal="@drawable/sb">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -36,53 +39,59 @@
 
             <Button
                 android:id="@+id/buttonTimeSeconds"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_sec"
-                android:textAllCaps="false"
-                android:background="@drawable/ripple"/>
+                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/buttonTimeMinutes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_min"
-                android:background="@drawable/ripple" android:textAllCaps="false" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeHours"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_hour"
-                android:background="@drawable/ripple" android:textAllCaps="false" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeDays"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_day"
-                android:background="@drawable/ripple" android:textAllCaps="false" />
+                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/buttonTimeWeeks"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_week"
-                android:background="@drawable/ripple" android:textAllCaps="false" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeMonths"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_month"
-                android:background="@drawable/ripple" android:textAllCaps="false" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeYears"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_year"
-                android:background="@drawable/ripple" android:textAllCaps="false" />
-
-
+                android:textAllCaps="false" />
 
 
         </LinearLayout>
@@ -91,22 +100,23 @@
 
     <ImageView
         android:id="@+id/txtTo"
-        android:layout_width="30dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/txtTo_width"
+        android:layout_height="@dimen/txtTo_height"
         android:layout_below="@+id/inputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:text="@string/txt_To"
-        android:src="@drawable/arrow4" />
+        android:scaleType="centerCrop"
+        android:layout_marginTop="@dimen/margin_top_txtTo"
+        android:src="@drawable/arrow4"
+        android:text="@string/txt_To" />
 
     <HorizontalScrollView
         android:id="@+id/outputUnitsScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTo"
+        android:layout_marginTop="@dimen/margin_top_outputUnitsScroll"
         android:scrollbarSize="5dip"
-        android:scrollbarThumbHorizontal="@drawable/sb"
-        android:layout_marginTop="30dp">
+        android:scrollbarThumbHorizontal="@drawable/sb">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -115,58 +125,59 @@
 
             <Button
                 android:id="@+id/buttonTimeSecondsOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_sec"
-                android:textAllCaps="false"
-                android:background="@drawable/ripple" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeMinutesOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_min"
-                android:textAllCaps="false"
-                android:background="@drawable/ripple" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeHoursOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_hour"
-                android:textAllCaps="false"
-                android:background="@drawable/ripple"  />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeDaysOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_day"
-                android:textAllCaps="false"
-                android:background="@drawable/ripple"  />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeWeeksOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_week"
-                android:textAllCaps="false"
-                android:background="@drawable/ripple" />
+                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/buttonTimeMonthsOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_month"
-                android:textAllCaps="false"
-                android:background="@drawable/ripple" />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonTimeYearsOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
+                android:background="@drawable/ripple"
                 android:text="@string/button_year"
-                android:textAllCaps="false"
-                android:background="@drawable/ripple" />
+                android:textAllCaps="false" />
 
 
         </LinearLayout>
@@ -178,21 +189,23 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/outputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:freezesText="true"  android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/margin_top_output"
+        android:freezesText="true"
         android:text="@string/txt_default"
-        android:textSize="30sp" />
+        android:textSize="@dimen/text_size" />
 
     <TextView
+        android:id="@+id/timeInputUnit1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/timeInputUnit1"
-        android:text="@string/button_time_default"
-        android:textSize="30sp"
-        android:ellipsize="end"
-        android:maxLines="1"
-       android:layout_centerHorizontal="true"
         android:layout_alignBottom="@+id/timeInput"
-        android:freezesText="true"     android:layout_toRightOf="@+id/timeInput"
+        android:layout_alignTop="@+id/timeInput"
+        android:layout_centerHorizontal="true"
         android:layout_toEndOf="@+id/timeInput"
-        android:layout_alignTop="@+id/timeInput" />
+        android:layout_toRightOf="@+id/timeInput"
+        android:ellipsize="end"
+        android:freezesText="true"
+        android:maxLines="1"
+        android:text="@string/button_time_default"
+        android:textSize="@dimen/text_size" />
 </RelativeLayout>

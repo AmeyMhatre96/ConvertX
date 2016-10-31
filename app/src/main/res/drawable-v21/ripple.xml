@@ -1,5 +1,4 @@
-<ripple
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="#bdc3c7">
 
     <!-- Note: <ripple> acts like a layer-list -->
@@ -13,9 +12,8 @@
     <!-- This is the border -->
     <item>
         <shape android:shape="rectangle">
-            <corners android:radius="2dp"/>
+            <corners android:radius="2dp" />
             <!-- Use your border color in place of #f00 -->
-
         </shape>
     </item>
     <item>
@@ -23,14 +21,20 @@
             <item>
                 <layer-list>
 
-                    <item android:bottom="2dp" android:left="2dp">
+                    <item
+                        android:bottom="2dp"
+                        android:left="2dp">
                         <shape>
-                            <gradient android:angle="270"
-                                android:endColor="#E2E2E2" android:startColor="#E2E2E2" />
-
+                            <gradient
+                                android:angle="270"
+                                android:endColor="#E2E2E2"
+                                android:startColor="#E2E2E2" />
                             <corners android:radius="2dp" />
-                            <padding android:bottom="8dp" android:left="8dp"
-                                android:right="8dp" android:top="8dp" />
+                            <padding
+                                android:bottom="8dp"
+                                android:left="8dp"
+                                android:right="8dp"
+                                android:top="8dp" />
                         </shape>
                     </item>
                 </layer-list>

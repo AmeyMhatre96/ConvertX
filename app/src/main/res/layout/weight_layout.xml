@@ -10,8 +10,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="@dimen/input_margin_top"
         android:ems="10"
+        android:backgroundTint="@android:color/transparent"
+        android:textCursorDrawable="@null"
+        android:textColor="@color/colorPrimaryText"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:hint="@string/eg_input"
@@ -25,7 +28,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="@dimen/margin_top_inputUnitsScroll"
         android:scrollbarSize="5dip"
         android:scrollbarThumbHorizontal="@drawable/sb">
 
@@ -36,48 +39,48 @@
 
             <Button
                 android:id="@+id/buttonWeightGrams"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/button_gram"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightKg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/button_kg"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightMg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/button_mg"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightTons"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/button_ton"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightPounds"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/button_pound"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightCarat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/button_carat"
                 android:textAllCaps="false" />
@@ -88,11 +91,12 @@
 
     <ImageView
         android:id="@+id/txtTo"
-        android:layout_width="30dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/txtTo_width"
+        android:layout_height="@dimen/txtTo_height"
         android:layout_below="@+id/inputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="@dimen/margin_top_txtTo"
+        android:scaleType="centerCrop"
         android:src="@drawable/arrow4"
         android:text="@string/txt_To" />
 
@@ -101,7 +105,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTo"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/margin_top_outputUnitsScroll"
         android:scrollbarSize="5dip"
         android:scrollbarThumbHorizontal="@drawable/sb">
 
@@ -112,40 +116,40 @@
 
             <Button
                 android:id="@+id/buttonWeightGramsOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/button_gram"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightKgOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/button_kg"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightMgOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/button_mg"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightTonsOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/button_ton"
                 android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonWeightPoundsOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
 
                 android:text="@string/button_pound"
@@ -154,8 +158,8 @@
 
             <Button
                 android:id="@+id/buttonWeightCaratOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:background="@drawable/ripple"
                 android:text="@string/button_carat"
                 android:textAllCaps="false" />
@@ -170,9 +174,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/outputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/margin_top_output"
         android:freezesText="true"
-        android:textSize="30sp" />
+        android:text="@string/txt_default"
+        android:textSize="@dimen/text_size" />
 
     <TextView
         android:id="@+id/textWeightUnit"
@@ -183,7 +188,8 @@
         android:layout_toEndOf="@+id/textWeightInput"
         android:layout_toRightOf="@+id/textWeightInput"
         android:ellipsize="end"
-        android:freezesText="true" android:maxLines="1"
+        android:freezesText="true"
+        android:maxLines="1"
         android:text="@string/button_weight_default"
-        android:textSize="30sp" />
+        android:textSize="@dimen/text_size" />
 </RelativeLayout>

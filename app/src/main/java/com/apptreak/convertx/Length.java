@@ -83,7 +83,7 @@ public class Length extends Fragment implements View.OnClickListener {
         }
 
     }
-//updated
+
     void decimalFormat(double input) {
         if (input > 100000000000.0) {
             df = new java.text.DecimalFormat("0.#####E0");
@@ -185,281 +185,166 @@ public class Length extends Fragment implements View.OnClickListener {
     private void convertToInch() {
         if (lengthInputUnit.getText().toString().equalsIgnoreCase("cm")) {
             lengthInputNo = lengthInputNo * 0.3937007874;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " in"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("mm")) {
             lengthInputNo = lengthInputNo * 0.0393700787;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " in"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("km")) {
             lengthInputNo = lengthInputNo * 39370.07874;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " in"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("μm")) {
             lengthInputNo = lengthInputNo * 0.0000393701;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " in"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("nm")) {
             lengthInputNo = lengthInputNo / 25400000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " in"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("ft")) {
             lengthInputNo = lengthInputNo * 12;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " in"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("m")) {
             lengthInputNo = lengthInputNo * 39.37007874;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " in"));
-        } else {
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " in"));
         }
+
+
+        decimalFormat(lengthInputNo);
+        LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " in"));
     }
 
     private void convertToFoot() {
         if (lengthInputUnit.getText().toString().equalsIgnoreCase("cm")) {
             lengthInputNo = lengthInputNo * 0.032808399;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " ft"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("mm")) {
             lengthInputNo = lengthInputNo * 0.0032808399;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", lengthInputNo + " ft"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("km")) {
             lengthInputNo = lengthInputNo * 3280.839895;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " ft"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("μm")) {
             lengthInputNo = lengthInputNo * 0.0000032808;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " ft"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("nm")) {
             lengthInputNo = lengthInputNo * 304800000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " ft"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("in")) {
             lengthInputNo = lengthInputNo * 0.0833333333;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " ft"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("m")) {
             lengthInputNo = lengthInputNo * 3.280839895;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " ft"));
-        } else {
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " ft"));
         }
+
+        decimalFormat(lengthInputNo);
+        LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " ft"));
     }
 
     private void convertToNano() {
         if (lengthInputUnit.getText().toString().equalsIgnoreCase("cm")) {
             lengthInputNo = lengthInputNo * 10000000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " nm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("mm")) {
             lengthInputNo = lengthInputNo * 1000000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " nm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("km")) {
             lengthInputNo = lengthInputNo * 1000000000000L;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " nm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("μm")) {
             lengthInputNo = lengthInputNo * 1000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " nm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("ft")) {
             lengthInputNo = lengthInputNo * 304800000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " nm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("in")) {
             lengthInputNo = lengthInputNo * 25400000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " nm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("m")) {
             lengthInputNo = lengthInputNo * 1000000000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " nm"));
-        } else {
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " ft"));
         }
+
+        decimalFormat(lengthInputNo);
+        LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " nm"));
     }
 
     private void convertToMicro() {
         if (lengthInputUnit.getText().toString().equalsIgnoreCase("cm")) {
             lengthInputNo = lengthInputNo * 10000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " μm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("mm")) {
             lengthInputNo = lengthInputNo * 1000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " μm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("km")) {
             lengthInputNo = lengthInputNo * 1000000000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " μm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("nm")) {
             lengthInputNo = lengthInputNo * 0.001;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " μm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("ft")) {
             lengthInputNo = lengthInputNo * 304800;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " μm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("in")) {
             lengthInputNo = lengthInputNo * 25400;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " μm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("m")) {
             lengthInputNo = lengthInputNo * 1000000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " μm"));
-        } else {
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " μm"));
         }
+        decimalFormat(lengthInputNo);
+        LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " μm"));
     }
 
     private void convertToCm() {
         if (lengthInputUnit.getText().toString().equalsIgnoreCase("m")) {
             lengthInputNo = lengthInputNo * 100;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " cm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("mm")) {
             lengthInputNo = lengthInputNo / 10;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " cm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("km")) {
             lengthInputNo = lengthInputNo * 100000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " cm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("μm")) {
             lengthInputNo = lengthInputNo / 10000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " cm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("nm")) {
             lengthInputNo = lengthInputNo / 10000000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " cm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("ft")) {
             lengthInputNo = lengthInputNo * 30.48;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " cm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("in")) {
             lengthInputNo = lengthInputNo * 2.54;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " cm"));
-        } else {
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " cm"));
         }
+        decimalFormat(lengthInputNo);
+        LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " cm"));
     }
 
     private void convertToM() {
         if (lengthInputUnit.getText().toString().equalsIgnoreCase("cm")) {
             lengthInputNo = lengthInputNo / 100;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " m"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("mm")) {
             lengthInputNo = lengthInputNo / 1000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " m"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("km")) {
             lengthInputNo = lengthInputNo * 1000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " m"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("μm")) {
             lengthInputNo = lengthInputNo / 1000000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " m"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("nm")) {
             lengthInputNo = lengthInputNo / 1000000000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " m"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("ft")) {
             lengthInputNo = lengthInputNo / 3.280839895;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " m"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("in")) {
             lengthInputNo = lengthInputNo / 39.37007874;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " m"));
-        } else {
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " m"));
         }
+
+        decimalFormat(lengthInputNo);
+        LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " m"));
     }
 
     private void convertToMm() {
         if (lengthInputUnit.getText().toString().equalsIgnoreCase("cm")) {
             lengthInputNo = lengthInputNo * 10;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " mm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("m")) {
             lengthInputNo = lengthInputNo * 1000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " mm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("km")) {
             lengthInputNo = lengthInputNo * 1000000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " mm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("μm")) {
             lengthInputNo = lengthInputNo / 1000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " mm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("nm")) {
             lengthInputNo = lengthInputNo / 1000000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " mm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("ft")) {
             lengthInputNo = lengthInputNo * 304.8;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " mm"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("in")) {
             lengthInputNo = lengthInputNo * 25.4;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " mm"));
-        } else {
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " mm"));
         }
+        decimalFormat(lengthInputNo);
+        LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " mm"));
     }
 
     private void convertToKm() {
         if (lengthInputUnit.getText().toString().equalsIgnoreCase("cm")) {
             lengthInputNo = lengthInputNo / 100000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " km"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("m")) {
             lengthInputNo = lengthInputNo / 1000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " km"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("mm")) {
             lengthInputNo = lengthInputNo / 1000000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " km"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("μm")) {
             lengthInputNo = lengthInputNo / 1000000000;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " km"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("nm")) {
             lengthInputNo = lengthInputNo / 1000000000000L;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " km"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("ft")) {
             lengthInputNo = lengthInputNo / 3280.839895;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " km"));
         } else if (lengthInputUnit.getText().toString().equalsIgnoreCase("in")) {
             lengthInputNo = lengthInputNo / 39370.07874;
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " km"));
-        } else {
-            decimalFormat(lengthInputNo);
-            LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " km"));
         }
+        decimalFormat(lengthInputNo);
+        LengthOutput.setText(String.format("%s", df.format(lengthInputNo) + " km"));
     }
 }
 

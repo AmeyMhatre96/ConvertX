@@ -11,8 +11,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="@dimen/input_margin_top"
         android:focusable="true"
+        android:backgroundTint="@android:color/transparent"
+        android:textCursorDrawable="@null"
+        android:textColor="@color/colorPrimaryText"
         android:focusableInTouchMode="true"
         android:ems="10"
         android:hint="@string/eg_input"
@@ -28,7 +31,7 @@
         android:layout_alignParentTop="true"
         android:scrollbarSize="5dip"
         android:scrollbarThumbHorizontal="@drawable/sb"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="@dimen/margin_top_inputUnitsScroll">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -37,50 +40,48 @@
 
             <Button
                 android:id="@+id/buttonVolumeLiter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/button_liter"
                 android:textAllCaps="false"
                 android:background="@drawable/ripple"   />
 
             <Button
                 android:id="@+id/buttonVolumeM3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/button_cubic_meter"
                 android:textAllCaps="false"
                 android:background="@drawable/ripple"    />
 
             <Button
                 android:id="@+id/buttonVolumeCm3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/button_cubic_cm"
                 android:textAllCaps="false"
                 android:background="@drawable/ripple"  />
 
             <Button
                 android:id="@+id/buttonVolumeMm3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/button_cubic_mm"
                 android:textAllCaps="false"
                 android:background="@drawable/ripple"  />
 
-
-
             <Button
                 android:id="@+id/buttonVolumeMl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/button_ml"
                 android:textAllCaps="false"
                 android:background="@drawable/ripple" />
 
             <Button
                 android:id="@+id/buttonVolumeGallon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/button_gallon"
                 android:textAllCaps="false"
                 android:background="@drawable/ripple"    />
@@ -91,11 +92,12 @@
 
     <ImageView
         android:id="@+id/txtTo"
-        android:layout_width="30dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/txtTo_width"
+        android:layout_height="@dimen/txtTo_height"
         android:layout_below="@+id/inputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="@dimen/margin_top_txtTo"
         android:text="@string/txt_To"
         android:src="@drawable/arrow4" />
 
@@ -106,7 +108,7 @@
         android:layout_below="@+id/txtTo"
         android:scrollbarSize="5dip"
         android:scrollbarThumbHorizontal="@drawable/sb"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="@dimen/margin_top_outputUnitsScroll">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -115,31 +117,31 @@
 
             <Button
                 android:id="@+id/buttonVolumeLiterOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/button_liter"
                 android:textAllCaps="false"
                 android:background="@drawable/ripple"   />
 
             <Button
                 android:id="@+id/buttonVolumeM3Out"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/button_cubic_meter"
                   android:textAllCaps="false"
                 android:background="@drawable/ripple" />
             <Button
                 android:id="@+id/buttonVolumeCm3Out"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/button_cubic_cm"
                 android:textAllCaps="false"
                 android:background="@drawable/ripple" />
 
             <Button
                 android:id="@+id/buttonVolumeMm3Out"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/button_cubic_mm"
                  android:textAllCaps="false"
                 android:background="@drawable/ripple"
@@ -148,8 +150,8 @@
 
             <Button
                 android:id="@+id/buttonVolumeMlOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/button_ml"
                  android:textAllCaps="false"
                 android:background="@drawable/ripple"
@@ -157,8 +159,8 @@
 
             <Button
                 android:id="@+id/buttonVolumeGallonOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="@dimen/btn_height"
                 android:text="@string/button_gallon"
                 android:textAllCaps="false"
                 android:background="@drawable/ripple"
@@ -176,10 +178,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/outputUnitsScroll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/margin_top_output"
         android:text="X"
         android:freezesText="true"
-        android:textSize="30sp" />
+        android:textSize="@dimen/text_size"/>
 
 
 
@@ -188,7 +190,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textVolumeUnit"
         android:text="@string/button_volume_default"
-        android:textSize="30sp"
+        android:textSize="@dimen/text_size"
         android:ellipsize="end"
         android:maxLines="1"
         android:layout_alignBottom="@+id/textVolumeInput"
