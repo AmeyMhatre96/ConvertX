@@ -70,7 +70,7 @@ public class Length extends Fragment implements View.OnClickListener {
         btnInch.setOnClickListener(this);
         btnInchOp.setOnClickListener(this);
 
-
+        lengthLayout.setOnClickListener(this);
         return lengthLayout;
     }
 

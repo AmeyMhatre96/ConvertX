@@ -125,6 +125,7 @@ public class Volume extends Fragment implements View.OnClickListener {
                 textVolumetUnit.setText(R.string.button_gallon);
                 volumeConversion();
                 outputCheck();
+                break;
 
 
             case R.id.buttonVolumeM3Out:
@@ -184,13 +185,13 @@ public class Volume extends Fragment implements View.OnClickListener {
 
         else if (textVolumeOut.getText().toString().contains("cm"))
             toCm3();
-        else if (textVolumeOut.getText().toString().contains("liter") | textVolumeOut.getText().toString().contains("liters"))
+        else if (textVolumeOut.getText().toString().contains("liter") || textVolumeOut.getText().toString().contains("liters"))
             toLiter();
         else if (textVolumeOut.getText().toString().contains("ml"))
             toMl();
         else if (textVolumeOut.getText().toString().contains("m"))
             toM3();
-        else if (textVolumeOut.getText().toString().contains("gallon") | textVolumeOut.getText().toString().contains("gallons"))
+        else if (textVolumeOut.getText().toString().contains("gallon") || textVolumeOut.getText().toString().contains("gallons"))
             toGallons();
     }
 

@@ -231,9 +231,9 @@ public class Weight extends Fragment implements View.OnClickListener {
     void toCarats() {
         inp = inputNo / 0.2;
         if (inp == 1)
-            unit  = " pound";
+            unit  = " carat";
         else
-            unit = " pounds";
+            unit = " carats";
         decimalFormat(inp, unit);
         textWeightOut.setText(String.format("%s", df.format(inp) + unit));
     }
