@@ -48,6 +48,9 @@ public class Temperature extends Fragment implements View.OnClickListener {
         btnfarOp.setOnClickListener(this);
         btnkelOp.setOnClickListener(this);
 
+
+        TempLayout.setOnClickListener(this);
+
         return TempLayout;
     }
 

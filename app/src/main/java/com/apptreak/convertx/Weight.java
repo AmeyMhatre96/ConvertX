@@ -67,6 +67,8 @@ public class Weight extends Fragment implements View.OnClickListener {
         buttonCarat.setOnClickListener(this);
         buttonCaratOut.setOnClickListener(this);
 
+        weightLayout.setOnClickListener(this);
+
         return weightLayout;
     }
 

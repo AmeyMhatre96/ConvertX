@@ -72,6 +72,8 @@ public class Area extends Fragment implements View.OnClickListener {
         btnSqrInchOp.setOnClickListener(this);
 
 
+        areaLayout.setOnClickListener(this);
+
         return areaLayout;
     }
 

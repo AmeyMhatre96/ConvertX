@@ -69,6 +69,7 @@ public class Volume extends Fragment implements View.OnClickListener {
         buttonGallon.setOnClickListener(this);
         buttonGallonOut.setOnClickListener(this);
 
+        volumeLayout.setOnClickListener(this);
 
         return volumeLayout;
     }
@@ -233,8 +234,8 @@ public class Volume extends Fragment implements View.OnClickListener {
     void toLiter() {
         unit = " liter";
         decimalFormat(inp,unit);
-       if (inputNo == 1)
-           textVolumeOut.setText(String.format("%s ", df.format(inputNo)+ " liter"));
+        if (inputNo == 1)
+            textVolumeOut.setText(String.format("%s ", df.format(inputNo)+ " liter"));
         else
             textVolumeOut.setText(String.format("%s ", df.format(inputNo ) + " liters"));
 
@@ -248,7 +249,7 @@ public class Volume extends Fragment implements View.OnClickListener {
     }
 
     void toGallons() {
-      inp = inputNo / 3.78541;
+        inp = inputNo / 3.78541;
         unit = " gallon";
         decimalFormat(inp,unit);
         if(inp == 1)

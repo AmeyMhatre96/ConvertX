@@ -76,7 +76,7 @@ public class Time extends Fragment implements View.OnClickListener {
         buttonYears.setOnClickListener(this);
         buttonsYearsOut.setOnClickListener(this);
 
-        Context context = getContext();
+        timeLayout.setOnClickListener(this);
 
 
        return timeLayout;

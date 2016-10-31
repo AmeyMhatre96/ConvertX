@@ -35,4 +35,18 @@
         android:layout_below="@id/tab_layout"/>
 
 
+    <android.support.design.widget.FloatingActionButton
+
+        app:fabSize="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+   android:layout_alignParentEnd="true"
+        app:srcCompat="@android:drawable/ic_input_delete"         android:layout_alignParentRight="true"
+   android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:tint="@color/colorPrimary"
+        android:id="@+id/fab"
+        />
 </RelativeLayout>
