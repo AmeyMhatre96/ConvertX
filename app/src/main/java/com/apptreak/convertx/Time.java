@@ -1,23 +1,18 @@
 package com.apptreak.convertx;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.util.AttributeSet;
+
 
 import java.math.RoundingMode;
 
@@ -82,14 +77,18 @@ public class Time extends Fragment implements View.OnClickListener {
        return timeLayout;
     }
 
-    void decimalFormat(double input,String unit) {
+    void decimalFormat(double input) {
         df = new java.text.DecimalFormat("#.#####");
 
-        if (String.format("%s", df.format(input)).length() > 12)  {
+        if(input < 0.0001 && input != 0){
+
+            df = new java.text.DecimalFormat("0.#####E0");
+        }
+        else if (String.format("%s", df.format(input)).length() > 13)  {
             df = new java.text.DecimalFormat("0.#####E0");
         }
 
-
+        df.setRoundingMode(RoundingMode.CEILING);
 
     }
 
@@ -189,19 +188,19 @@ public class Time extends Fragment implements View.OnClickListener {
     }
     //Checking the LengthOutput unit, for instant conversion from input buttons
     void outputCheck() {
-        if (textTimeOut.getText().toString().endsWith("seconds") | textTimeOut.getText().toString().endsWith("seconds"))
+        if (textTimeOut.getText().toString().endsWith("seconds") || textTimeOut.getText().toString().endsWith("second"))
             toSeconds();
-        else if (textTimeOut.getText().toString().endsWith("minutes") | textTimeOut.getText().toString().endsWith("minute"))
+        else if (textTimeOut.getText().toString().endsWith("minutes") || textTimeOut.getText().toString().endsWith("minute"))
             toMinutes();
-        else if (textTimeOut.getText().toString().endsWith("hours") | textTimeOut.getText().toString().endsWith("hour"))
+        else if (textTimeOut.getText().toString().endsWith("hours") || textTimeOut.getText().toString().endsWith("hour"))
             toHours();
-        else if (textTimeOut.getText().toString().endsWith("days") | textTimeOut.getText().toString().endsWith("day"))
+        else if (textTimeOut.getText().toString().endsWith("days") || textTimeOut.getText().toString().endsWith("day"))
             toDays();
-        else if (textTimeOut.getText().toString().endsWith("weeks") | textTimeOut.getText().toString().endsWith("week"))
+        else if (textTimeOut.getText().toString().endsWith("weeks") || textTimeOut.getText().toString().endsWith("week"))
             toWeeks();
-        else if (textTimeOut.getText().toString().endsWith("months") | textTimeOut.getText().toString().endsWith("month"))
+        else if (textTimeOut.getText().toString().endsWith("months") || textTimeOut.getText().toString().endsWith("month"))
             toMonths();
-        else if (textTimeOut.getText().toString().endsWith("years") | textTimeOut.getText().toString().endsWith("year"))
+        else if (textTimeOut.getText().toString().endsWith("years") || textTimeOut.getText().toString().endsWith("year"))
             toYears();
     }
 
@@ -211,7 +210,7 @@ public class Time extends Fragment implements View.OnClickListener {
            unit  = " second";
         else
             unit = " seconds";
-        decimalFormat(inputNo, unit);
+        decimalFormat(inputNo);
         textTimeOut.setText(String.format("%s", df.format(inputNo) + unit));
     }
 
@@ -221,7 +220,7 @@ public class Time extends Fragment implements View.OnClickListener {
             unit  = " minute";
         else
             unit = " minutes";
-        decimalFormat(inp, unit);
+        decimalFormat(inp);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -232,7 +231,7 @@ public class Time extends Fragment implements View.OnClickListener {
             unit  = " hour";
         else
             unit = " hours";
-        decimalFormat(inp, unit);
+        decimalFormat(inp);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -244,7 +243,7 @@ public class Time extends Fragment implements View.OnClickListener {
             unit  = " day";
         else
             unit = " days";
-        decimalFormat(inp, unit);
+        decimalFormat(inp);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -255,7 +254,7 @@ public class Time extends Fragment implements View.OnClickListener {
             unit  = " week";
         else
             unit = " weeks";
-        decimalFormat(inp, unit);
+        decimalFormat(inp);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -266,7 +265,7 @@ public class Time extends Fragment implements View.OnClickListener {
             unit  = " month";
         else
             unit = " months";
-        decimalFormat(inp, unit);
+        decimalFormat(inp);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -278,11 +277,9 @@ public class Time extends Fragment implements View.OnClickListener {
             unit  = " year";
         else
             unit = " years";
-        decimalFormat(inp, unit);
+        decimalFormat(inp);
         textTimeOut.setText(String.format("%s", df.format(inp) + unit));
     }
-
-
 
     void hideSoftKeyboard(){
         try {

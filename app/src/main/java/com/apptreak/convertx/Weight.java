@@ -3,16 +3,12 @@ package com.apptreak.convertx;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -72,16 +68,21 @@ public class Weight extends Fragment implements View.OnClickListener {
         return weightLayout;
     }
 
-    void decimalFormat(double input,String unit) {
+    void decimalFormat(double input) {
         df = new java.text.DecimalFormat("#.#####");
 
-        if (String.format("%s", df.format(input)).length() > 12)  {
+        if(input < 0.0001 && input != 0){
+            df = new java.text.DecimalFormat("0.#####E0");
+        }
+        else if (String.format("%s", df.format(input)).length() > 12)  {
             df = new java.text.DecimalFormat("0.#####E0");
         }
 
-
+        df.setRoundingMode(RoundingMode.CEILING);
 
     }
+
+
 
     public void onClick(View v) {
 
@@ -169,18 +170,17 @@ public class Weight extends Fragment implements View.OnClickListener {
 
     //Checking the Output unit, for instant conversion from input buttons
     void outputCheck() {
-        if (textWeightOut.getText().toString().endsWith("gram") | textWeightOut.getText().toString().endsWith("grams")) {
-            System.out.println("True story");
+        if (textWeightOut.getText().toString().endsWith("gram") || textWeightOut.getText().toString().endsWith("grams")) {
             toGrams();
         }else if (textWeightOut.getText().toString().endsWith("kg"))
             toKg();
         else if (textWeightOut.getText().toString().endsWith("mg"))
             toMg();
-        else if (textWeightOut.getText().toString().endsWith("ton") | textWeightOut.getText().toString().endsWith("tons"))
+        else if (textWeightOut.getText().toString().endsWith("ton") || textWeightOut.getText().toString().endsWith("tons"))
             toTons();
-        else if (textWeightOut.getText().toString().endsWith("pound") | textWeightOut.getText().toString().endsWith("pounds"))
+        else if (textWeightOut.getText().toString().endsWith("pound") || textWeightOut.getText().toString().endsWith("pounds"))
             toPounds();
-        else if (textWeightOut.getText().toString().endsWith("carat") | textWeightOut.getText().toString().endsWith("carats"))
+        else if (textWeightOut.getText().toString().endsWith("carat") || textWeightOut.getText().toString().endsWith("carats"))
             toCarats();
     }
 
@@ -189,7 +189,7 @@ public class Weight extends Fragment implements View.OnClickListener {
             unit  = " gram";
         else
             unit = " grams";
-        decimalFormat(inputNo, unit);
+        decimalFormat(inputNo);
         textWeightOut.setText(String.format("%s", df.format(inputNo) + unit));
     }
 
@@ -197,14 +197,14 @@ public class Weight extends Fragment implements View.OnClickListener {
     void toKg() {
         inp = inputNo / 1000;
         unit = " kg";
-        decimalFormat(inp, unit);
+        decimalFormat(inp);
         textWeightOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
     void toMg() {
         inp = inputNo * 1000;
         unit = " mg";
-        decimalFormat(inp, unit);
+        decimalFormat(inp);
         textWeightOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -214,7 +214,7 @@ public class Weight extends Fragment implements View.OnClickListener {
             unit  = " ton";
         else
             unit = " tons";
-        decimalFormat(inp, unit);
+        decimalFormat(inp);
         textWeightOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -224,7 +224,7 @@ public class Weight extends Fragment implements View.OnClickListener {
             unit  = " pound";
         else
             unit = " pounds";
-        decimalFormat(inp, unit);
+        decimalFormat(inp);
         textWeightOut.setText(String.format("%s", df.format(inp) + unit));
     }
 
@@ -234,7 +234,7 @@ public class Weight extends Fragment implements View.OnClickListener {
             unit  = " carat";
         else
             unit = " carats";
-        decimalFormat(inp, unit);
+        decimalFormat(inp);
         textWeightOut.setText(String.format("%s", df.format(inp) + unit));
     }
 

@@ -3,17 +3,13 @@ package com.apptreak.convertx;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -31,8 +27,7 @@ public class Volume extends Fragment implements View.OnClickListener {
     java.text.DecimalFormat df = new java.text.DecimalFormat("#.#####");
     double inputNo;
     double inp;
-    boolean flag = false;
-    String unit;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -74,15 +69,16 @@ public class Volume extends Fragment implements View.OnClickListener {
         return volumeLayout;
     }
 
-    void decimalFormat(double input , String unit) {
+    void decimalFormat(double input) {
         df = new java.text.DecimalFormat("#.#####");
 
-        if (String.format("%s", df.format(input)).length() > 12)  {
+        if(input < 0.0001 && input != 0){
             df = new java.text.DecimalFormat("0.#####E0");
         }
-
-
-
+        else if (String.format("%s", df.format(input)).length() > 12)  {
+            df = new java.text.DecimalFormat("0.#####E0");
+        }
+        df.setRoundingMode(RoundingMode.CEILING);
     }
 
 
@@ -197,9 +193,7 @@ public class Volume extends Fragment implements View.OnClickListener {
 
     void toM3() {
         inp = inputNo / 1000;
-        unit = "   ";
-        decimalFormat(inp,unit);
-
+        decimalFormat(inp);
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             textVolumeOut.setText(Html.fromHtml(String.format("%s ", df.format(inp))+ "m<sup><small>3</small></sup>", 0));
         } else {
@@ -209,10 +203,7 @@ public class Volume extends Fragment implements View.OnClickListener {
 
     void toCm3() {
         inp = inputNo * 1000;
-        unit = "   ";
-        decimalFormat(inp,unit);
-
-
+        decimalFormat(inp);
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             textVolumeOut.setText(Html.fromHtml(String.format("%s ", df.format(inp))+ "cm<sup><small>3</small></sup>", 0));
         } else {
@@ -222,8 +213,7 @@ public class Volume extends Fragment implements View.OnClickListener {
 
     void toMm3() {
         inp = inputNo * 1000000;
-        unit = "   ";
-        decimalFormat(inp,unit);
+        decimalFormat(inp);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             textVolumeOut.setText(Html.fromHtml(String.format("%s ", df.format(inp))+ "mm<sup><small>3</small></sup>", 0));
@@ -233,31 +223,26 @@ public class Volume extends Fragment implements View.OnClickListener {
     }
 
     void toLiter() {
-        unit = " liter";
-        decimalFormat(inp,unit);
+        decimalFormat(inputNo);
         if (inputNo == 1)
             textVolumeOut.setText(String.format("%s ", df.format(inputNo)+ " liter"));
         else
             textVolumeOut.setText(String.format("%s ", df.format(inputNo ) + " liters"));
-
     }
+
     void toMl() {
         inp = inputNo * 1000;
-        unit = " ml";
-        decimalFormat(inp,unit);
+        decimalFormat(inp);
         textVolumeOut.setText(String.format("%s ", df.format(inp)) + " ml");
-
     }
 
     void toGallons() {
         inp = inputNo / 3.78541;
-        unit = " gallon";
-        decimalFormat(inp,unit);
+        decimalFormat(inp);
         if(inp == 1)
             textVolumeOut.setText(String.format("%s", df.format(inp))+ " gallon");
         else
             textVolumeOut.setText(String.format("%s", df.format(inp)) + " gallons");
-
     }
 
 
