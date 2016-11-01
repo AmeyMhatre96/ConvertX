@@ -78,12 +78,15 @@ public class Area extends Fragment implements View.OnClickListener {
     }
 
     void decimalFormat(double input) {
-        if (input > 100000000000.0) {
+        if (input > 100000000000.0 || Double.toString(input).contains("0.000")) {
             df = new java.text.DecimalFormat("0.#####E0");
         } else {
             df = new java.text.DecimalFormat("#.#####");
         }
+
         df.setRoundingMode(RoundingMode.CEILING);
+
+
     }
 
     @Override
