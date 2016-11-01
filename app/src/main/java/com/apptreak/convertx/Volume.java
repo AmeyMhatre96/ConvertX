@@ -70,16 +70,19 @@ public class Volume extends Fragment implements View.OnClickListener {
     }
 
     void decimalFormat(double input) {
-        df = new java.text.DecimalFormat("#.#####");
+        df = new java.text.DecimalFormat("#.#######");
 
-        if(input < 0.0001 && input != 0){
+        if(input < 0.00001 && input != 0){
             df = new java.text.DecimalFormat("0.#####E0");
         }
-        else if (String.format("%s", df.format(input)).length() > 12)  {
+        if (String.format("%s", df.format(input)).length() > 15 || input > 100000000000.0)  {
             df = new java.text.DecimalFormat("0.#####E0");
         }
+
         df.setRoundingMode(RoundingMode.CEILING);
+
     }
+
 
 
 
