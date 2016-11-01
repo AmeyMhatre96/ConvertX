@@ -19,7 +19,7 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:hint="@string/eg_input"
-        android:inputType="numberDecimal"
+        android:inputType="numberDecimal|numberSigned"
         android:textAlignment="center" />
 
     <ImageView
